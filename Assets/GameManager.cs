@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
@@ -17,7 +18,11 @@ public class SteamAppListResponse
 public class AppListContainer
 {
     [SerializeField] private List<SteamAppEntry> apps = new();
-    public List<SteamAppEntry> appList => apps;
+    public List<SteamAppEntry> appList
+    {
+        get => apps;
+        set => apps = value;
+    }
 }
 
 [Serializable]
@@ -89,11 +94,25 @@ public class GameManager : MonoBehaviour
         "Nudity", "Sexual Content", "Erotic"
     };
 
-    private List<SteamAppEntry> _cachedAppList;
+    private AppListContainer _cachedAppList;
+    private string _appListPath;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private async void Start()
     {
+        _cachedAppList = new AppListContainer();
+        _appListPath =  Application.persistentDataPath + "/applist.json";
+        if (File.Exists(_appListPath))
+        {
+            try
+            {
+                _cachedAppList = ReadAppList();
+            }
+            catch (Exception e)
+            {
+                Debug.LogException(e);
+            }
+        }
         var randomGame = await GetSafeRandomSteamGameAsync();
         if (randomGame != null)
         {
@@ -106,6 +125,18 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+    }
+
+    public void WriteAppList(AppListContainer appList)
+    {
+        var toWrite = JsonUtility.ToJson(appList, true);
+        File.WriteAllText(_appListPath, toWrite);
+    }
+
+    public AppListContainer ReadAppList()
+    {
+        AppListContainer localAppList = JsonUtility.FromJson<AppListContainer>(File.ReadAllText(_appListPath));
+        return localAppList;
     }
 
     private async Task<List<SteamAppEntry>> FetchAppListAsync()
@@ -121,25 +152,20 @@ public class GameManager : MonoBehaviour
                 Debug.Log(request.error);
                 return null;
             }
-            var response =
-                JsonUtility.FromJson<SteamAppListResponse>(request.downloadHandler.text);
+            var response = JsonUtility.FromJson<SteamAppListResponse>(request.downloadHandler.text);
+            
             return response?.responseData?.appList;
         }
     }
 
-    public void WriteAppList(List<SteamAppEntry> appList)
-    {
-        _cachedAppList = appList;
-        string filePath = Application.persistentDataPath + "/applist.json";
-        
-    }
-
     public async Task<StoreDetailsData> GetSafeRandomSteamGameAsync()
     {
-        if (_cachedAppList == null || _cachedAppList.Count == 0)
+        
+        if (_cachedAppList == null || _cachedAppList.appList.Count == 0)
         {
-            _cachedAppList = await FetchAppListAsync();
-            if (_cachedAppList == null || _cachedAppList.Count == 0)
+            _cachedAppList.appList = await FetchAppListAsync();
+            
+            if (_cachedAppList == null || _cachedAppList.appList.Count == 0)
             {
                 Debug.Log("No Steam App List");
                 return null;
@@ -148,8 +174,8 @@ public class GameManager : MonoBehaviour
 
         while (true)
         {
-            var randomIndex = Random.Range(0, _cachedAppList.Count);
-            var chosenApp = _cachedAppList[randomIndex];
+            var randomIndex = Random.Range(0, _cachedAppList.appList.Count);
+            var chosenApp = _cachedAppList.appList[randomIndex];
             var gameData = await FetchAppDetailsAsync(chosenApp.appId);
             if (gameData == null)
                 // Unlisted app or failed response; try another
