@@ -10,7 +10,6 @@ using Random = UnityEngine.Random;
 public class SteamAppListResponse
 {
     [SerializeField] private AppListContainer response;
-
     public AppListContainer responseData => response;
 }
 
@@ -18,7 +17,6 @@ public class SteamAppListResponse
 public class AppListContainer
 {
     [SerializeField] private List<SteamAppEntry> apps = new();
-
     public List<SteamAppEntry> appList => apps;
 }
 
@@ -27,7 +25,6 @@ public class SteamAppEntry
 {
     [SerializeField] private int appid;
     [SerializeField] private string name;
-
     public int appId => appid;
     public string gameName => name;
 }
@@ -36,7 +33,6 @@ public class SteamAppEntry
 public class StoreDetailsResponseWrapper
 {
     [SerializeField] private StoreDetailsData data;
-
     public StoreDetailsData storeData => data;
 }
 
@@ -70,7 +66,6 @@ public class GenreEntry
 {
     [SerializeField] private string id;
     [SerializeField] private string description;
-
     public string Id => id;
     public string Description => description;
 }
@@ -121,19 +116,23 @@ public class GameManager : MonoBehaviour
         {
             var operation = request.SendWebRequest();
             while (!operation.isDone) await Task.Yield();
-
             if (request.result != UnityWebRequest.Result.Success)
             {
                 Debug.Log(request.error);
                 return null;
             }
-
             var response =
                 JsonUtility.FromJson<SteamAppListResponse>(request.downloadHandler.text);
             return response?.responseData?.appList;
         }
     }
 
+    public void WriteAppList(List<SteamAppEntry> appList)
+    {
+        _cachedAppList = appList;
+        string filePath = Application.persistentDataPath + "/applist.json";
+        
+    }
 
     public async Task<StoreDetailsData> GetSafeRandomSteamGameAsync()
     {
@@ -151,19 +150,15 @@ public class GameManager : MonoBehaviour
         {
             var randomIndex = Random.Range(0, _cachedAppList.Count);
             var chosenApp = _cachedAppList[randomIndex];
-
             var gameData = await FetchAppDetailsAsync(chosenApp.appId);
-
             if (gameData == null)
                 // Unlisted app or failed response; try another
                 continue;
-
             if (IsNSFW(gameData))
             {
                 Debug.Log($"[Steam Store] Skipped NSFW App: {gameData.Name} (AppID: {chosenApp.appId})");
                 continue;
             }
-
             return gameData;
         }
     }
