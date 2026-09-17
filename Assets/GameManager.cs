@@ -40,6 +40,12 @@ public class StoreDetailsResponseWrapper
     [SerializeField] private StoreDetailsData data;
     public StoreDetailsData storeData => data;
 }
+[Serializable]
+public class Screenshot
+{
+    public int id;
+    public string path_full;
+}
 
 [Serializable]
 public class StoreDetailsData
@@ -47,6 +53,9 @@ public class StoreDetailsData
     public string name;
     public string short_description;
     public string required_age;
+    public string header_image;
+    
+    public List<Screenshot> screenshots = new();
     public ContentDescriptors content_descriptors;
     public List<GenreEntry> genres = new();
     public PriceOverview price_overview;
@@ -57,6 +66,7 @@ public class StoreDetailsData
     public ContentDescriptors ContentDescriptors => content_descriptors;
     public List<GenreEntry> Genres => genres;
     public PriceOverview PriceOverview => price_overview;
+    public List<Screenshot> Screenshots => screenshots;
 }
 
 [Serializable]
@@ -114,12 +124,13 @@ public class GameManager : MonoBehaviour
             }
         }
         var randomGame = await GetSafeRandomSteamGameAsync();
-        if (randomGame != null)
-        {
-            Debug.Log($"[Steam Store] Found Game: {randomGame.Name}");
-            Debug.Log($"[Steam Store] Price: {randomGame.PriceOverview?.FinalFormatted ?? "Free/N/A"}");
-            Debug.Log($"[Steam Store] Description: {randomGame.ShortDescription}");
-        }
+        
+        
+    }
+
+    public void DisplayGameInfo(StoreDetailsData game)
+    {
+        
     }
 
     // Update is called once per frame

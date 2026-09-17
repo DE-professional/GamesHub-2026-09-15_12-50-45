@@ -4,7 +4,15 @@
     <option name="flavorId" value="CMakePlainProjectFlavor" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c37f049f-f16a-49c3-b677-3fa581fbd580" name="Changes" comment="" />
+    <list default="true" id="c37f049f-f16a-49c3-b677-3fa581fbd580" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GamesHub-2026-09-15_12-50-45/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GamesHub-2026-09-15_12-50-45/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PriceIsNice.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PriceIsNice.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StoreFetcher.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StoreFetcher.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,14 +31,16 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5d8f15b2b58c41eeb63317e0004d8aa86000/06/529956a6/JsonUtility.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c5ae8a4eeb824526b5df2932bc2395e046ae00/00/9b90bffa/Task.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c5ae8a4eeb824526b5df2932bc2395e046ae00/48/d31e53eb/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c5ae8a4eeb824526b5df2932bc2395e046ae00/57/6212bcde/TaskAwaiter`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Immediate Window" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8,
-  "fromUser": false
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectId" id="3JQVkaHj2gE5yMCNc09RrJRegbq" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -46,9 +56,10 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "XThreadsFramesViewSplitterKey": "0.42455623",
     "cidr.known.project.marker": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "priceIsNice",
     "git.auto.fetch.suggestion.counter": "1",
     "ignore.virus.scanning.warn.message": "true",
     "settings.editor.selected.configurable": "preferences.sourceCode.C#"
@@ -135,29 +146,16 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/GameManager.cs</url>
-          <line>166</line>
-          <properties documentPath="C:\Users\Grungle\repos\GamesHub-2026-09-15_12-50-45\Assets\GameManager.cs" containingFunctionPresentation="Method 'GetSafeRandomSteamGameAsync'">
+          <line>248</line>
+          <properties documentPath="C:\Users\Grungle\repos\GamesHub-2026-09-15_12-50-45\Assets\GameManager.cs" containingFunctionPresentation="Method 'FetchAppDetailsAsync'">
             <startOffsets>
-              <option value="4856" />
+              <option value="7273" />
             </startOffsets>
             <endOffsets>
-              <option value="4856" />
+              <option value="7346" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/GameManager.cs</url>
-          <line>102</line>
-          <properties documentPath="C:\Users\Grungle\repos\GamesHub-2026-09-15_12-50-45\Assets\GameManager.cs" containingFunctionPresentation="Method 'Start'">
-            <startOffsets>
-              <option value="2639" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2679" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="12" />
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
