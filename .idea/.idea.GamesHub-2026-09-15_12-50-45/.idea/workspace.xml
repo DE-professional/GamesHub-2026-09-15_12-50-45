@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="CMakeProjectFlavorService">
     <option name="flavorId" value="CMakePlainProjectFlavor" />
+  </component>
+  <component name="CMakeSettings">
+    <configurations />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c37f049f-f16a-49c3-b677-3fa581fbd580" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GamesHub-2026-09-15_12-50-45/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GamesHub-2026-09-15_12-50-45/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarouselEntry.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarouselEntry.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LooksInside.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LooksInside.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Carousel Image.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Carousel Image.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TestEnt.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TestEnt.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/testimg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/testimg.jpg.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,13 +40,88 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/7259672740c441d987325dcf724e83576e00/2b/22584abd/02000002pdb1.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/d860b2654e7240e6aa37a882408ee2117400/15/8ba9ebc7/02000019pdb6.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/d860b2654e7240e6aa37a882408ee2117400/69/656c2163/0200000Cpdb7.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/d860b2654e7240e6aa37a882408ee2117400/be/9f5e65bb/02000016pdb3.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/d860b2654e7240e6aa37a882408ee2117400/f1/fa50b51b/02000002pdb1.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5d8f15b2b58c41eeb63317e0004d8aa86000/06/529956a6/JsonUtility.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c5ae8a4eeb824526b5df2932bc2395e046ae00/00/9b90bffa/Task.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c5ae8a4eeb824526b5df2932bc2395e046ae00/07/480279d8/List`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c5ae8a4eeb824526b5df2932bc2395e046ae00/48/d31e53eb/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c5ae8a4eeb824526b5df2932bc2395e046ae00/57/6212bcde/TaskAwaiter`1.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/CarouselEntry.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ClaudeCarousel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/LoadImageFromURL.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SteamGame.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Immediate Window" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="6.0164873073811054E-15" />
+      <entry key="MS500" value="0.001431754645692818" />
+      <entry key="S2" value="0.19465735763065103" />
+      <entry key="S5" value="0.5578751748362367" />
+      <entry key="S10" value="1.007113302864031" />
+      <entry key="S30" value="3.2864922858375483" />
+      <entry key="S60" value="6.835684089981707" />
+      <entry key="M2" value="10.841319732197478" />
+      <entry key="M5" value="15.53091423215462" />
+      <entry key="M10" value="21.201892274488632" />
+      <entry key="M15" value="28.0870098456327" />
+      <entry key="M30" value="49.74080467756108" />
+      <entry key="H1" value="84.26185024962042" />
+      <entry key="H2" value="123.6541639251035" />
+      <entry key="H4" value="156.0486328207152" />
+      <entry key="D1" value="193.87303123039544" />
+      <entry key="W1" value="201.65955245099553" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="1.0000040043651297" />
+      <entry key="MS500" value="1.089999592102149" />
+      <entry key="S2" value="1.8235880468951748" />
+      <entry key="S5" value="2.400258687902029" />
+      <entry key="S10" value="2.8117835177421906" />
+      <entry key="S30" value="4.4077898554354356" />
+      <entry key="S60" value="6.5884901984612005" />
+      <entry key="M2" value="8.9228748347323" />
+      <entry key="M5" value="11.342693714249878" />
+      <entry key="M10" value="13.927604563513952" />
+      <entry key="M15" value="16.794279071395227" />
+      <entry key="M30" value="24.620911996854343" />
+      <entry key="H1" value="36.16207738272767" />
+      <entry key="H2" value="49.431915883876464" />
+      <entry key="H4" value="60.56394543604953" />
+      <entry key="D1" value="73.78051185584596" />
+      <entry key="W1" value="76.52648714479939" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.049721030251294825" />
+      <entry key="MS500" value="0.5576894691792366" />
+      <entry key="S2" value="1.4921905636473787" />
+      <entry key="S5" value="2.583457842934344" />
+      <entry key="S10" value="3.573259198166436" />
+      <entry key="S30" value="7.52396729423436" />
+      <entry key="S60" value="13.269772004281227" />
+      <entry key="M2" value="19.64897829071672" />
+      <entry key="M5" value="26.81182270553044" />
+      <entry key="M10" value="35.09160094803878" />
+      <entry key="M15" value="44.851094293122394" />
+      <entry key="M30" value="74.3393158633645" />
+      <entry key="H1" value="120.40669725465877" />
+      <entry key="H2" value="173.07380757413384" />
+      <entry key="H4" value="216.60488129249384" />
+      <entry key="D1" value="267.65194926618045" />
+      <entry key="W1" value="278.1858026534145" />
+    </decayedShown>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8,
   &quot;fromUser&quot;: false
@@ -40,25 +131,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.42455623&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;priceIsNice&quot;,
-    &quot;git.auto.fetch.suggestion.counter&quot;: &quot;1&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.C#&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "XThreadsFramesViewSplitterKey": "0.42455623",
+    "cidr.known.project.marker": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "priceIsNice",
+    "git.auto.fetch.suggestion.counter": "1",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.sourceCode.C#"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.6.0f1\Editor\Unity.exe" />
@@ -80,13 +177,15 @@
       <option name="MIXED_MODE_DEBUG" value="0" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" useMixedMode="false">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" useMixedMode="false" ignored-value-for-modified-check="14492">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="14492" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list />
+        <list>
+          <MonoRuntime />
+        </list>
       </option>
       <option name="selectedOptions">
         <list />
@@ -138,16 +237,16 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/GameManager.cs</url>
-          <line>248</line>
-          <properties documentPath="C:\Users\Grungle\repos\GamesHub-2026-09-15_12-50-45\Assets\GameManager.cs" containingFunctionPresentation="Method 'FetchAppDetailsAsync'">
+          <line>170</line>
+          <properties documentPath="C:\Users\Grungle\repos\GamesHub-2026-09-15_12-50-45\Assets\GameManager.cs" containingFunctionPresentation="Method 'Start'">
             <startOffsets>
-              <option value="7273" />
+              <option value="4714" />
             </startOffsets>
             <endOffsets>
-              <option value="7346" />
+              <option value="4714" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="15" />
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

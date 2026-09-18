@@ -2,11 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using Christina.UI;
 using Newtonsoft.Json.Linq;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
+using Util;
 [Serializable]
 public class SteamAppListResponse
 {
@@ -96,20 +101,41 @@ public class GameManager : MonoBehaviour
 {
     [Header("Steam Config")] [SerializeField]
     private string apiKey = "65E6A4ADD9A187AEFE1F687424CB7A3E";
-
+    
+    [SerializeField] private Button StartButton;
+    [SerializeField] private TextMeshProUGUI loadingText;
+    [SerializeField] private List<string> imageUrlList = new(); 
+    [SerializeField] private ImageCarousel _imageCarousel;
+    [SerializeField] private TextMeshProUGUI gameDescription;
+    [SerializeField] private TextMeshProUGUI gameName;
+    [SerializeField] private float gamePrice;
+    
+    
     private readonly HashSet<int> _blockedDescriptorIds = new() { 1, 3, 5 };
 
     private readonly HashSet<string> _blockedGenres = new(StringComparer.OrdinalIgnoreCase)
     {
-        "Nudity", "Sexual Content", "Erotic"
+        "Nudity", "Sexual Content", "Erotic", "Anime", "Romance"
     };
 
     private AppListContainer _cachedAppList;
     private string _appListPath;
 
+    private void Awake()
+    {
+        StartButton.onClick.AddListener(HandleClick);
+    }
+
+    private void HandleClick()
+    {
+        StartButton.gameObject.SetActive(false);
+        _imageCarousel.gameObject.SetActive(true);
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private async void Start()
     {
+        loadingText.gameObject.SetActive(true);
         _cachedAppList = new AppListContainer();
         _appListPath =  Application.persistentDataPath + "/applist.json";
         if (File.Exists(_appListPath))
@@ -123,27 +149,27 @@ public class GameManager : MonoBehaviour
                 Debug.LogException(e);
             }
         }
+
         var randomGame = await GetSafeRandomSteamGameAsync();
+
+        foreach (var screenshot in randomGame.screenshots)
+        {
+           imageUrlList.Add(screenshot.path_full);
+        }
+
+        StartCoroutine(SpriteUrlLoader.LoadSpritesParallel(imageUrlList, sprites =>
+        {
+            _imageCarousel.SetSprites(sprites);
+            gameDescription.text = randomGame.short_description;
+            gameName.text = randomGame.name;
+            loadingText.gameObject.SetActive(false);
+            StartButton.gameObject.SetActive(true);
+            float.TryParse(randomGame.price_overview.FinalFormatted, out gamePrice);
+            
+        }));
         
-        
-    }
 
-    public void DisplayGameInfo(StoreDetailsData game)
-    {
-        
     }
-
-    // Update is called once per frame
-    private void Update()
-    {
-    }
-
-    public void WriteAppList(AppListContainer appList)
-    {
-        var toWrite = JsonUtility.ToJson(appList, true);
-        File.WriteAllText(_appListPath, toWrite);
-    }
-
     public AppListContainer ReadAppList()
     {
         AppListContainer localAppList = JsonUtility.FromJson<AppListContainer>(File.ReadAllText(_appListPath));
