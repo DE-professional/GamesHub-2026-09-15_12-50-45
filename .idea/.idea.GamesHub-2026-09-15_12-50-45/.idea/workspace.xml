@@ -10,19 +10,7 @@
     <configurations />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c37f049f-f16a-49c3-b677-3fa581fbd580" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GamesHub-2026-09-15_12-50-45/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GamesHub-2026-09-15_12-50-45/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CarouselEntry.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CarouselEntry.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LooksInside.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LooksInside.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Carousel Image.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Carousel Image.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestEnt.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestEnt.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/testimg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/testimg.jpg.meta" beforeDir="false" />
-    </list>
+    <list default="true" id="c37f049f-f16a-49c3-b677-3fa581fbd580" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,61 +50,61 @@
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="6.0164873073811054E-15" />
-      <entry key="MS500" value="0.001431754645692818" />
-      <entry key="S2" value="0.19465735763065103" />
-      <entry key="S5" value="0.5578751748362367" />
-      <entry key="S10" value="1.007113302864031" />
-      <entry key="S30" value="3.2864922858375483" />
-      <entry key="S60" value="6.835684089981707" />
-      <entry key="M2" value="10.841319732197478" />
-      <entry key="M5" value="15.53091423215462" />
-      <entry key="M10" value="21.201892274488632" />
-      <entry key="M15" value="28.0870098456327" />
-      <entry key="M30" value="49.74080467756108" />
-      <entry key="H1" value="84.26185024962042" />
-      <entry key="H2" value="123.6541639251035" />
-      <entry key="H4" value="156.0486328207152" />
-      <entry key="D1" value="193.87303123039544" />
-      <entry key="W1" value="201.65955245099553" />
+      <entry key="MS100" value="1.0314159598367154" />
+      <entry key="MS500" value="2.1208665511911153" />
+      <entry key="S2" value="5.711239591849993" />
+      <entry key="S5" value="12.179313663286182" />
+      <entry key="S10" value="20.582153660245723" />
+      <entry key="S30" value="35.19873580188912" />
+      <entry key="S60" value="42.88101260213479" />
+      <entry key="M2" value="50.294731252480496" />
+      <entry key="M5" value="59.078236266097164" />
+      <entry key="M10" value="66.61158685127646" />
+      <entry key="M15" value="74.04922375812563" />
+      <entry key="M30" value="96.22632999849523" />
+      <entry key="H1" value="131.21252846407128" />
+      <entry key="H2" value="171.17693858855824" />
+      <entry key="H4" value="204.12365276244066" />
+      <entry key="D1" value="242.68255339384297" />
+      <entry key="W1" value="250.63127257932058" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.0000040043651297" />
-      <entry key="MS500" value="1.089999592102149" />
-      <entry key="S2" value="1.8235880468951748" />
-      <entry key="S5" value="2.400258687902029" />
-      <entry key="S10" value="2.8117835177421906" />
-      <entry key="S30" value="4.4077898554354356" />
-      <entry key="S60" value="6.5884901984612005" />
-      <entry key="M2" value="8.9228748347323" />
-      <entry key="M5" value="11.342693714249878" />
-      <entry key="M10" value="13.927604563513952" />
-      <entry key="M15" value="16.794279071395227" />
-      <entry key="M30" value="24.620911996854343" />
-      <entry key="H1" value="36.16207738272767" />
-      <entry key="H2" value="49.431915883876464" />
-      <entry key="H4" value="60.56394543604953" />
-      <entry key="D1" value="73.78051185584596" />
-      <entry key="W1" value="76.52648714479939" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="4.541441911224397E-72" />
+      <entry key="S2" value="2.6053651156962934E-18" />
+      <entry key="S5" value="1.7467662540064895E-7" />
+      <entry key="S10" value="7.585256167116408E-4" />
+      <entry key="S30" value="0.2848067894669453" />
+      <entry key="S60" value="1.6747524922569095" />
+      <entry key="M2" value="4.498701372159757" />
+      <entry key="M5" value="8.624802337582498" />
+      <entry key="M10" value="12.144870841690095" />
+      <entry key="M15" value="15.328712571388882" />
+      <entry key="M30" value="23.522110912963978" />
+      <entry key="H1" value="35.34593300890744" />
+      <entry key="H2" value="48.87091638211535" />
+      <entry key="H4" value="60.21929671731481" />
+      <entry key="D1" value="73.71036874072624" />
+      <entry key="W1" value="76.51608951999856" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.049721030251294825" />
-      <entry key="MS500" value="0.5576894691792366" />
-      <entry key="S2" value="1.4921905636473787" />
-      <entry key="S5" value="2.583457842934344" />
-      <entry key="S10" value="3.573259198166436" />
-      <entry key="S30" value="7.52396729423436" />
-      <entry key="S60" value="13.269772004281227" />
-      <entry key="M2" value="19.64897829071672" />
-      <entry key="M5" value="26.81182270553044" />
-      <entry key="M10" value="35.09160094803878" />
-      <entry key="M15" value="44.851094293122394" />
-      <entry key="M30" value="74.3393158633645" />
-      <entry key="H1" value="120.40669725465877" />
-      <entry key="H2" value="173.07380757413384" />
-      <entry key="H4" value="216.60488129249384" />
-      <entry key="D1" value="267.65194926618045" />
-      <entry key="W1" value="278.1858026534145" />
+      <entry key="MS100" value="0.9966775269152437" />
+      <entry key="MS500" value="2.1069479433639393" />
+      <entry key="S2" value="5.7014406662213055" />
+      <entry key="S5" value="12.163158286567795" />
+      <entry key="S10" value="20.560339015137792" />
+      <entry key="S30" value="35.45583711944681" />
+      <entry key="S60" value="44.506214050733455" />
+      <entry key="M2" value="54.72961399806808" />
+      <entry key="M5" value="67.65361450157175" />
+      <entry key="M10" value="78.72216418978822" />
+      <entry key="M15" value="89.34953849516005" />
+      <entry key="M30" value="119.72661772525298" />
+      <entry key="H1" value="166.54140816376486" />
+      <entry key="H2" value="220.0356159202242" />
+      <entry key="H4" value="264.33524322256545" />
+      <entry key="D1" value="316.39132097419366" />
+      <entry key="W1" value="327.1471239238905" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -219,6 +207,8 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Gets ALL images for a game and puts them in an interactive carousel. Also has a &quot;fetching game&quot; state to indicate that the program is busy. No game logic yet." />
+    <option name="LAST_COMMIT_MESSAGE" value="Gets ALL images for a game and puts them in an interactive carousel. Also has a &quot;fetching game&quot; state to indicate that the program is busy. No game logic yet." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
