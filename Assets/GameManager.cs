@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Threading.Tasks;
 using Christina.UI;
@@ -108,8 +109,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private ImageCarousel _imageCarousel;
     [SerializeField] private TextMeshProUGUI gameDescription;
     [SerializeField] private TextMeshProUGUI gameName;
-    [SerializeField] private float gamePrice;
-    
+    [SerializeField] private double actualPrice;
+    [SerializeField] private double approxPrice;
+    [SerializeField] private TextMeshProUGUI promptText;
+    private string defaultStr = "Do you think\n{0}\nis MORE or LESS expensive than {1}?";
     
     private readonly HashSet<int> _blockedDescriptorIds = new() { 1, 3, 5 };
 
@@ -150,8 +153,19 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        var randomGame = await GetSafeRandomSteamGameAsync();
-
+        StoreDetailsData randomGame = await GetSafeRandomSteamGameAsync();
+        while (randomGame.PriceOverview.FinalFormatted == null)
+        {
+            randomGame = await GetSafeRandomSteamGameAsync();
+        }
+        
+        
+        double.TryParse(randomGame.PriceOverview.FinalFormatted.Substring(1), out actualPrice);
+        actualPrice = Math.Round(actualPrice, 2);
+        approxPrice = Math.Round(GetApproxPrice(actualPrice), 2);
+        Debug.Log(randomGame.name);
+        Debug.Log(actualPrice);
+        Debug.Log(approxPrice);
         foreach (var screenshot in randomGame.screenshots)
         {
            imageUrlList.Add(screenshot.path_full);
@@ -164,12 +178,29 @@ public class GameManager : MonoBehaviour
             gameName.text = randomGame.name;
             loadingText.gameObject.SetActive(false);
             StartButton.gameObject.SetActive(true);
-            float.TryParse(randomGame.price_overview.FinalFormatted, out gamePrice);
             
+            var formattedGameInfo = String.Format(defaultStr, randomGame.name, approxPrice);
+            promptText.SetText(formattedGameInfo);
         }));
         
 
     }
+
+    private double GetApproxPrice(double actualPrice)
+    {
+        var rand = new System.Random();
+        var maxPrice = actualPrice * 1.5;
+        var minPrice = actualPrice * 0.5;
+        var minDifference = actualPrice * 0.05;
+        var appx = rand.NextDouble() * (maxPrice - minPrice) + minPrice;
+        do
+        {
+            appx = rand.NextDouble() * (maxPrice - minPrice) + minPrice;
+        } while (Math.Abs(appx - actualPrice) < minDifference);
+            
+        return appx;
+    }
+
     public AppListContainer ReadAppList()
     {
         AppListContainer localAppList = JsonUtility.FromJson<AppListContainer>(File.ReadAllText(_appListPath));
