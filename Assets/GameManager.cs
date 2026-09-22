@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using System.Globalization;
 using System.IO;
 using System.Threading.Tasks;
@@ -100,19 +101,36 @@ public class PriceOverview
 
 public class GameManager : MonoBehaviour
 {
+    public static event Action<double, bool> OnValuesUpdated; 
+    
+    // Broadcasts (remainingGuesses)
+    public static event Action<int> OnGuessesChanged; 
+    
+    // Game over notifications
+    public static event Action<bool> OnGameOver;
     [Header("Steam Config")] [SerializeField]
     private string apiKey = "65E6A4ADD9A187AEFE1F687424CB7A3E";
-    
+
+    [SerializeField] private GameObject mainCanvas;
     [SerializeField] private Button StartButton;
     [SerializeField] private TextMeshProUGUI loadingText;
     [SerializeField] private List<string> imageUrlList = new(); 
     [SerializeField] private ImageCarousel _imageCarousel;
     [SerializeField] private TextMeshProUGUI gameDescription;
     [SerializeField] private TextMeshProUGUI gameName;
+    [SerializeField] List<Double> difficultyList;
+    [SerializeField] private GameObject priceIsNiceWrapper;
+    [SerializeField] private Button higherButton;
+    [SerializeField] private Button lowerButton;
+    
+    [Header("State Data")]
     [SerializeField] private double actualPrice;
     [SerializeField] private double approxPrice;
+    [SerializeField] private int triesRemaining;
+    private bool isGameOver;
+    
     [SerializeField] private TextMeshProUGUI promptText;
-    private string defaultStr = "Do you think\n{0}\nis MORE or LESS expensive than {1}?";
+    private string defaultStr = "Do you think\n{0}\nis MORE or LESS expensive than ${1}?";
     
     private readonly HashSet<int> _blockedDescriptorIds = new() { 1, 3, 5 };
 
@@ -126,18 +144,25 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        StartButton.onClick.AddListener(HandleClick);
+        StartButton.onClick.AddListener(StartGame);
     }
 
-    private void HandleClick()
+    private void StartGame()
     {
+        isGameOver = false;
         StartButton.gameObject.SetActive(false);
         _imageCarousel.gameObject.SetActive(true);
+        priceIsNiceWrapper.SetActive(true);
+        OnGuessesChanged?.Invoke(triesRemaining);
+        OnValuesUpdated?.Invoke(approxPrice, false);
+        
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private async void Start()
     {
+        triesRemaining = 3;
+
         loadingText.gameObject.SetActive(true);
         _cachedAppList = new AppListContainer();
         _appListPath =  Application.persistentDataPath + "/applist.json";
@@ -178,7 +203,6 @@ public class GameManager : MonoBehaviour
             gameName.text = randomGame.name;
             loadingText.gameObject.SetActive(false);
             StartButton.gameObject.SetActive(true);
-            
             var formattedGameInfo = String.Format(defaultStr, randomGame.name, approxPrice);
             promptText.SetText(formattedGameInfo);
         }));
@@ -186,11 +210,52 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void UpdatePriceText(double newPrice)
+    {
+        
+    }
+    public void GuessHigher()
+    {
+        EvaluateGuess(actualPrice > approxPrice);
+    }
+
+    public void GuessLower()
+    {
+        EvaluateGuess(actualPrice < approxPrice);
+    }
+
+    public void EvaluateGuess(bool isCorrect)
+    {
+        if (isGameOver) return;
+
+        if (isCorrect)
+        {
+            isGameOver = true;
+            OnValuesUpdated?.Invoke(approxPrice, true); // Reveal real value
+            OnGameOver?.Invoke(true); // Player won!
+            
+        }
+        else
+        {
+            triesRemaining--;
+            OnGuessesChanged?.Invoke(triesRemaining);
+            approxPrice = Math.Round(GetApproxPrice(actualPrice), 2);
+            
+            if (triesRemaining <= 0)
+            {
+                isGameOver = true;
+                OnValuesUpdated?.Invoke(approxPrice, true); // Reveal real value
+                OnGameOver?.Invoke(false); // Player lost!
+            }
+        }
+    }
+    
+
     private double GetApproxPrice(double actualPrice)
     {
         var rand = new System.Random();
-        var maxPrice = actualPrice * 1.5;
-        var minPrice = actualPrice * 0.5;
+        var maxPrice = actualPrice * difficultyList[triesRemaining - 1];
+        var minPrice = actualPrice / difficultyList[triesRemaining - 1];
         var minDifference = actualPrice * 0.05;
         var appx = rand.NextDouble() * (maxPrice - minPrice) + minPrice;
         do
