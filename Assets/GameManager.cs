@@ -223,30 +223,40 @@ public class GameManager : MonoBehaviour
 
     private void GameOver(bool isWin)
     {
+        var congratsText = winWrapper.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        var gameInfo = winWrapper.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        var scoreInfo =  winWrapper.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
         var timeTaken = timer.StopTimer();
+        
+        gameInfo.text = $"{randomGame.name}'s Price Was: {randomGame.price_overview.FinalFormatted}";
+        try
+        {
+            _imageCarousel.gameObject.SetActive(false);
+        }
+        catch (MissingReferenceException e)
+        {
+            print(e.Message);
+        }
+        priceIsNiceWrapper.gameObject.SetActive(false);
         if (isWin)
         {
             //Hide everything else
-            try
-            {
-                _imageCarousel.gameObject.SetActive(false);
-            }
-            catch (MissingReferenceException e)
-            {
-                print(e.Message);
-            }
-            priceIsNiceWrapper.gameObject.SetActive(false);
-            //Display some text saying "You win! {Game name}'s actual price was {actual price}". 
-            winWrapper.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = $"{randomGame.name}'s Price Was: {randomGame.price_overview.FinalFormatted}";
-            winWrapper.gameObject.SetActive(true);
-            
-            
-            //Show your score (tries left * time taken)
             var baseScore = 5000;
             var maxTries = 3;
             var targetTime = 30f;
             var score = baseScore * (1+((float)triesRemaining/maxTries)) * (targetTime / (targetTime + timeTaken));
+            //Display some text saying "You win! {Game name}'s actual price was {actual price}". 
+            //Show your score (tries left * time taken)
+            scoreInfo.text = $"Your score is: {score}";
+            
         }
+        else
+        {
+            scoreInfo.SetText("");
+            congratsText.SetText("You Lost, but there's always tomorrow!");
+            
+        }
+        winWrapper.gameObject.SetActive(true);
     }
     public void GuessHigher()
     {
