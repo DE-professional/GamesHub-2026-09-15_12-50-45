@@ -62,7 +62,7 @@ public class StoreDetailsData
     public string short_description;
     public string required_age;
     public string header_image;
-    
+    public string steam_appid;
     
     public List<Screenshot> screenshots = new();
     public ContentDescriptors content_descriptors;
@@ -113,6 +113,8 @@ public class GameManager : MonoBehaviour
     public static event Action<bool> OnGameOver;
     [Header("Steam Config")] [SerializeField]
     private string apiKey = "65E6A4ADD9A187AEFE1F687424CB7A3E";
+
+    private bool isDebug = true;
 
     [SerializeField] private GameObject mainCanvas;
     [SerializeField] private Button StartButton;
@@ -182,6 +184,7 @@ public class GameManager : MonoBehaviour
         {
             try
             {
+                print("Trying to load applist.json");
                 _cachedAppList = ReadAppList();
             }
             catch (Exception e)
@@ -191,8 +194,9 @@ public class GameManager : MonoBehaviour
         }
 
         randomGame = await GetSafeRandomSteamGameAsync();
-        while (randomGame.PriceOverview.FinalFormatted == null)
+        while (randomGame.PriceOverview.FinalFormatted == null || randomGame.PriceOverview.FinalFormatted[0] != '$')
         {
+            print("Trying to find a game...");
             randomGame = await GetSafeRandomSteamGameAsync();
         }
         
@@ -247,7 +251,7 @@ public class GameManager : MonoBehaviour
             var score = baseScore * (1+((float)triesRemaining/maxTries)) * (targetTime / (targetTime + timeTaken));
             //Display some text saying "You win! {Game name}'s actual price was {actual price}". 
             //Show your score (tries left * time taken)
-            scoreInfo.text = $"Your score is: {score}";
+            scoreInfo.text = $"Your score is: {Math.Round(score,0)}";
             
         }
         else
@@ -333,7 +337,7 @@ public class GameManager : MonoBehaviour
                 return null;
             }
             var response = JsonUtility.FromJson<SteamAppListResponse>(request.downloadHandler.text);
-            
+            WriteAppList(response.responseData);
             return response?.responseData?.appList;
         }
     }
@@ -420,7 +424,11 @@ public class GameManager : MonoBehaviour
             
         }
     }
-
+    public void WriteAppList(AppListContainer appList)
+    {
+        var toWrite = JsonUtility.ToJson(appList, true);
+        File.WriteAllText(_appListPath, toWrite);
+    }
     private bool IsNSFW(StoreDetailsData data)
     {
         // 1. Check Content Descriptors
