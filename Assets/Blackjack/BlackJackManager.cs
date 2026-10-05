@@ -5,6 +5,8 @@ using Unity.VisualScripting;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR;
+using Random = UnityEngine.Random;
 
 public class BlackJackManager : MonoBehaviour
 {
@@ -33,6 +35,34 @@ public class BlackJackManager : MonoBehaviour
     {
         CreateDeck();
         print(deck.Count);
+        ShuffleDeck();
+        DealCardToPlayer();
+        DealCardToPlayer();
+    }
+    void UpdateUI()
+    {
+        _playerHandText.text = $"Player: {CalculateHandScore(playerHand)}";
+        _dealerHandText.text = $"Dealer: {CalculateHandScore(dealerHand)}";
+    }
+
+    private  String CalculateHandScore(List<Card> hand)
+    {
+        int handScore = 0;
+        foreach (Card card in hand)
+        {
+            if (card.Rank > Rank.Jack)
+            {
+                throw new NotImplementedException();
+            }
+        }
+        throw new NotImplementedException();
+    }
+
+    void DealCardToPlayer()
+    {
+        Card card = DrawCard();
+        playerHand.Add(card);
+        CreateCardUI(card, playerHandContainer);
     }
     void CreateCardUI(Card card, Transform container, bool isFaceDown = false)
     {
@@ -51,6 +81,23 @@ public class BlackJackManager : MonoBehaviour
                 deck.Add(card);
             }
         }
+    }
+    void ShuffleDeck()
+    {
+        for (int i = 0; i < deck.Count; i++)
+        {
+            Card temp = deck[i];
+            int randomIndex = Random.Range(i, deck.Count);
+            deck[i] = deck[randomIndex];
+            deck[randomIndex] = temp;
+        }
+    }
+
+    Card DrawCard()
+    {
+        Card drawn = deck[0];
+        deck.RemoveAt(0);
+        return drawn;
     }
 
     void CalculateHandValue(List<Card> hand)

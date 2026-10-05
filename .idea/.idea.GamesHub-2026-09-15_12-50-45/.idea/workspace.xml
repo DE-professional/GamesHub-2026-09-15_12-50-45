@@ -12,8 +12,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c37f049f-f16a-49c3-b677-3fa581fbd580" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GamesHub-2026-09-15_12-50-45/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GamesHub-2026-09-15_12-50-45/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PriceIsNice.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PriceIsNice.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Blackjack/BlackJackManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blackjack/BlackJackManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Blackjack/Blackjack.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blackjack/Blackjack.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Blackjack/CardDisplay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blackjack/CardDisplay.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Blackjack/CardPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blackjack/CardPrefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/VersionControlSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/VersionControlSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +55,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/ClaudeCarousel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/LoadImageFromURL.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SteamGame.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Immediate Window" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="McpProjectServerCommands">
     <commands />
@@ -61,61 +63,61 @@
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.00041476546008" />
-      <entry key="S2" value="1.1719948051160447" />
-      <entry key="S5" value="1.7026886159948886" />
-      <entry key="S10" value="2.1711756458311307" />
-      <entry key="S30" value="2.668718453975003" />
-      <entry key="S60" value="2.8661020691110313" />
-      <entry key="M2" value="4.08527414985425" />
-      <entry key="M5" value="18.167501516190036" />
-      <entry key="M10" value="48.96919277251912" />
-      <entry key="M15" value="77.81254958598758" />
-      <entry key="M30" value="156.18294352062776" />
-      <entry key="H1" value="270.48426680827987" />
-      <entry key="H2" value="394.44043263352523" />
-      <entry key="H4" value="497.11036862382025" />
-      <entry key="D1" value="621.1817512331838" />
-      <entry key="W1" value="647.4505173457511" />
+      <entry key="MS100" value="5.6299724196209475E-6" />
+      <entry key="MS500" value="0.1220336770254931" />
+      <entry key="S2" value="1.2528527607623778" />
+      <entry key="S5" value="2.159777818637029" />
+      <entry key="S10" value="2.8709745449428956" />
+      <entry key="S30" value="4.90104244955919" />
+      <entry key="S60" value="6.816523294821175" />
+      <entry key="M2" value="8.589433010297297" />
+      <entry key="M5" value="10.482670473085555" />
+      <entry key="M10" value="11.586024611231782" />
+      <entry key="M15" value="12.503089679130268" />
+      <entry key="M30" value="17.45561810582636" />
+      <entry key="H1" value="34.701664734893356" />
+      <entry key="H2" value="102.22674350414833" />
+      <entry key="H4" value="246.710578805473" />
+      <entry key="D1" value="592.1397934887729" />
+      <entry key="W1" value="695.0141134496686" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="4.354607696211283E-4" />
-      <entry key="MS500" value="0.2805952710385516" />
-      <entry key="S2" value="1.2854852244033537" />
-      <entry key="S5" value="2.212784950583457" />
-      <entry key="S10" value="2.8874391058666977" />
-      <entry key="S30" value="3.563116627511775" />
-      <entry key="S60" value="3.775917267096324" />
-      <entry key="M2" value="3.985873521324044" />
-      <entry key="M5" value="5.547230177328284" />
-      <entry key="M10" value="9.40212410563666" />
-      <entry key="M15" value="13.580120168762067" />
-      <entry key="M30" value="27.36395566554419" />
-      <entry key="H1" value="51.73590655353811" />
-      <entry key="H2" value="81.980427716809" />
-      <entry key="H4" value="109.21424598016289" />
-      <entry key="D1" value="144.07397250058392" />
-      <entry key="W1" value="151.67637663621105" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0000107945433523" />
+      <entry key="S5" value="1.0156554562394648" />
+      <entry key="S10" value="1.2022617320073288" />
+      <entry key="S30" value="2.5120716702518866" />
+      <entry key="S60" value="3.7008083299232095" />
+      <entry key="M2" value="4.658473758996724" />
+      <entry key="M5" value="5.40806224943723" />
+      <entry key="M10" value="5.709533727088336" />
+      <entry key="M15" value="5.910427606810682" />
+      <entry key="M30" value="6.801294933142248" />
+      <entry key="H1" value="9.711329086064364" />
+      <entry key="H2" value="23.045480318894814" />
+      <entry key="H4" value="54.723251477079685" />
+      <entry key="D1" value="136.2066467351539" />
+      <entry key="W1" value="161.33159586279348" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.18301228286962926" />
-      <entry key="MS500" value="0.7852824769567016" />
-      <entry key="S2" value="1.861174136366695" />
-      <entry key="S5" value="3.4212830903018676" />
-      <entry key="S10" value="4.715785615933821" />
-      <entry key="S30" value="6.085490899204756" />
-      <entry key="S60" value="6.563664386107108" />
-      <entry key="M2" value="8.027315841998803" />
-      <entry key="M5" value="23.67985709177827" />
-      <entry key="M10" value="58.33599792883458" />
-      <entry key="M15" value="91.35785209008631" />
-      <entry key="M30" value="183.51283358597308" />
-      <entry key="H1" value="322.18933640654654" />
-      <entry key="H2" value="476.3970275377186" />
-      <entry key="H4" value="606.308913899265" />
-      <entry key="D1" value="765.2522979048892" />
-      <entry key="W1" value="799.1263793321014" />
+      <entry key="MS100" value="7.135162322422548E-6" />
+      <entry key="MS500" value="0.13633773230494606" />
+      <entry key="S2" value="1.5274914294017221" />
+      <entry key="S5" value="2.7454339737207016" />
+      <entry key="S10" value="3.766723565890474" />
+      <entry key="S30" value="7.205247103260951" />
+      <entry key="S60" value="10.372799164547127" />
+      <entry key="M2" value="13.15906348231069" />
+      <entry key="M5" value="15.848872594406451" />
+      <entry key="M10" value="17.27299497666496" />
+      <entry key="M15" value="18.397919137101862" />
+      <entry key="M30" value="24.24833321788792" />
+      <entry key="H1" value="44.40729255553998" />
+      <entry key="H2" value="125.2656508644653" />
+      <entry key="H4" value="301.4260576362825" />
+      <entry key="D1" value="728.343222718816" />
+      <entry key="W1" value="856.3451650912571" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -144,7 +146,7 @@
     &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.2886836&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;priceIsNice&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Blackjack&quot;,
     &quot;git.auto.fetch.suggestion.counter&quot;: &quot;1&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -176,15 +178,13 @@
       <option name="MIXED_MODE_DEBUG" value="0" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" useMixedMode="false" ignored-value-for-modified-check="21264">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" useMixedMode="false">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="21264" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list>
-          <MonoRuntime />
-        </list>
+        <list />
       </option>
       <option name="selectedOptions">
         <list />
@@ -219,7 +219,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Gets ALL images for a game and puts them in an interactive carousel. Also has a &quot;fetching game&quot; state to indicate that the program is busy. No game logic yet." />
-    <option name="LAST_COMMIT_MESSAGE" value="Gets ALL images for a game and puts them in an interactive carousel. Also has a &quot;fetching game&quot; state to indicate that the program is busy. No game logic yet." />
+    <MESSAGE value="Working on the actual game" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working on the actual game" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -237,17 +238,17 @@
           <option name="timeStamp" value="3" />
         </breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/GameManager.cs</url>
-          <line>163</line>
-          <properties documentPath="C:\Users\Grungle\repos\GamesHub-2026-09-15_12-50-45\Assets\GameManager.cs" containingFunctionPresentation="Method 'Start'">
+          <url>file://$PROJECT_DIR$/Assets/Blackjack/CardDisplay.cs</url>
+          <line>23</line>
+          <properties documentPath="C:\Users\Grungle\repos\GamesHub-2026-09-15_12-50-45\Assets\Blackjack\CardDisplay.cs" containingFunctionPresentation="Method 'DisplayCard'">
             <startOffsets>
-              <option value="4608" />
+              <option value="651" />
             </startOffsets>
             <endOffsets>
-              <option value="4649" />
+              <option value="697" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="21" />
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
