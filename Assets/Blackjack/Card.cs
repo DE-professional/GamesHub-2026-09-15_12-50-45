@@ -30,16 +30,14 @@ public enum Rank : int
 public class Card
 {
     [SerializeField] SpriteRenderer cardSprite;
-    [SerializeField] public Rank Rank;
-    [SerializeField] public Suit Suit;
-    [SerializeField] int cardValue;
+    public Suit Suit { get; private set; }
+    public Rank Rank { get; private set; }
 
-    
-    public Card(Rank rank, Suit suit)
+    // Constructor
+    public Card(Suit suit, Rank rank)
     {
-        this.Rank = rank;
-        this.Suit = suit;
-        this.cardValue = GetValue();
+        Suit = suit;
+        Rank = rank;
     }
     public int GetValue()
     {
@@ -53,6 +51,10 @@ public class Card
 
         // 2 through 10 match their enum numerical values
         return (int)Rank;
+    }
+    public override string ToString()
+    {
+        return $"{Rank} of {Suit}";
     }
     
 }
