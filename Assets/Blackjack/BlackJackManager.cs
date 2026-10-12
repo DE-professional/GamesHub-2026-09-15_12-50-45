@@ -96,6 +96,12 @@ public class BlackJackManager : MonoBehaviour
         UpdateBettingUI();
     }
 
+    public void MaxBet()
+    {
+        if (!bettingPanel.activeSelf) return;
+        currentBet = Mathf.Min(currentBet + chips, chips);
+        UpdateBettingUI();
+    }
     // Hook chip buttons up to this with the chip value as the argument
     public void AddToBet(int amount)
     {
