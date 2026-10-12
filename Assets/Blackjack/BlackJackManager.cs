@@ -18,6 +18,7 @@ public class BlackJackManager : MonoBehaviour
     public CardAtlas cardAtlas;
     public GameObject cardPrefab;
     public Transform playerHandContainer;
+    public Transform splitHandContainer; // Second player card row, only shown after a split
     public Transform dealerHandContainer;
 
     [Header("UI Text & Buttons")]
@@ -26,8 +27,38 @@ public class BlackJackManager : MonoBehaviour
     public TextMeshProUGUI statusText;
     public Button hitButton;
     public Button standButton;
+    public Button doubleDownButton;
+    public Button splitButton;
+    public Button startNewGameButton;
+
+    [Header("Betting")]
+    public int startingChips = 500;   // Daily allowance
+    public int handsPerSession = 10;
+    public GameObject bettingPanel;   // Parent of the chip, clear and deal buttons
+    public Button dealButton;
+    public TextMeshProUGUI chipsText;
+    public TextMeshProUGUI betText;
+    public TextMeshProUGUI handsText;
     
-    private List<Card> playerHand = new List<Card>();
+    private int chips;
+    private int currentBet;
+    private int handsPlayed;
+    
+    private class PlayerHand
+    {
+        public List<Card> Cards = new List<Card>();
+        public Transform Container;
+        public int Bet;
+        public bool IsDoubled;
+        public bool IsDone;        // No more decisions for this hand (stood, doubled, bust, 21, split aces)
+        public EndState? Result;   // Set early on bust, otherwise after the dealer plays
+    }
+
+    private List<PlayerHand> playerHands = new List<PlayerHand>();
+    private int activeHandIndex;
+    private PlayerHand ActiveHand => playerHands[activeHandIndex];
+    private bool IsSplit => playerHands.Count > 1;
+
     private List<Card> dealerHand =  new List<Card>();
     private List<Card> deck = new List<Card>();
     
@@ -37,64 +68,238 @@ public class BlackJackManager : MonoBehaviour
 
     private void Start()
     {
+        if (splitHandContainer == null)
+            Debug.LogWarning("BlackJackManager: splitHandContainer is not assigned, so splitting is disabled.", this);
+
+        StartNewSession();
+    }
+
+    void StartNewSession()
+    {
+        chips = startingChips;
+        handsPlayed = 0;
+        BeginBetting();
+    }
+
+    void BeginBetting()
+    {
+        ClearHandContainers();
+        DisableUIText();
+        statusText.text = "Place your bet";
+        currentBet = 0;
+        playerHands.Clear();
+
+        SetActionButtonsInteractable(false);
+        startNewGameButton.gameObject.SetActive(false);
+        bettingPanel.SetActive(true);
+        dealButton.gameObject.SetActive(true);
+        UpdateBettingUI();
+    }
+
+    // Hook chip buttons up to this with the chip value as the argument
+    public void AddToBet(int amount)
+    {
+        if (!bettingPanel.activeSelf) return;
+        currentBet = Mathf.Min(currentBet + amount, chips);
+        UpdateBettingUI();
+    }
+
+    public void ClearBet()
+    {
+        if (!bettingPanel.activeSelf) return;
+        currentBet = 0;
+        UpdateBettingUI();
+    }
+
+    public void OnDealButtonClicked()
+    {
+        if (currentBet <= 0) return;
+
+        chips -= currentBet;
+        handsPlayed++;
+        bettingPanel.SetActive(false);
+        dealButton.gameObject.SetActive(false);
+        UpdateBettingUI();
         StartCoroutine(StartNewGameSequence());
     }
-    
+
+    public void OnNextHandButtonClicked()
+    {
+        BeginBetting();
+    }
+
+    void UpdateBettingUI()
+    {
+        chipsText.text = $"Chips: {chips}";
+        betText.text = $"Bet: {(playerHands.Count > 0 ? TotalWagered() : currentBet)}";
+        handsText.text = $"Hands left: {handsPerSession - handsPlayed}";
+        dealButton.interactable = currentBet > 0;
+    }
+
+    int TotalWagered()
+    {
+        int total = 0;
+        foreach (PlayerHand hand in playerHands) total += hand.Bet;
+        return total;
+    }
+
+    bool IsSessionOver()
+    {
+        return handsPlayed >= handsPerSession || chips <= 0;
+    }
+
+    public void DisableUIText()
+    {
+        playerText.text = "";
+        dealerText.text = "";
+    }
     IEnumerator StartNewGameSequence()
     {
+        DisableUIText();
         CreateDeck();
         ShuffleDeck();
         ClearHandContainers();
 
-        playerHand.Clear();
+        PlayerHand firstHand = new PlayerHand { Container = playerHandContainer, Bet = currentBet };
+        playerHands.Clear();
+        playerHands.Add(firstHand);
+        activeHandIndex = 0;
         dealerHand.Clear();
 
         statusText.text = "";
-        hitButton.interactable = false;
-        standButton.interactable = false;
+        SetActionButtonsInteractable(false);
+        startNewGameButton.gameObject.SetActive(false);
 
         // Sequential deal with dramatic pauses
-        yield return DealCardAnimated(playerHand, playerHandContainer);
+        yield return DealCardAnimated(firstHand.Cards, playerHandContainer);
         yield return new WaitForSeconds(0.15f);
 
         yield return DealCardAnimated(dealerHand, dealerHandContainer, isFaceDown: false);
         yield return new WaitForSeconds(0.15f);
 
-        yield return DealCardAnimated(playerHand, playerHandContainer);
+        yield return DealCardAnimated(firstHand.Cards, playerHandContainer);
         yield return new WaitForSeconds(0.15f);
 
         yield return DealCardAnimated(dealerHand, dealerHandContainer, isFaceDown: true);
 
         UpdateUI();
-        CheckBlackjack();
-        hitButton.interactable = true;
-        standButton.interactable = true;
+
+        EndState? naturalResult = CheckBlackjack();
+        if (naturalResult.HasValue)
+        {
+            firstHand.Result = naturalResult.Value;
+            yield return EndGame();
+            yield break;
+        }
+
+        yield return ContinuePlayerTurn();
     }
 
-    private void CheckBlackjack()
+    // Returns the round result if either side was dealt a natural, otherwise null (play continues)
+    private EndState? CheckBlackjack()
     {
-        bool playerBlackJack = false;
-        bool dealerBlackJack = false;
-        if (CalculateHandScore(playerHand) == 21) playerBlackJack = true;
-        if (CalculateHandScore(dealerHand) == 21) dealerBlackJack = true;
-        if (playerBlackJack && dealerBlackJack)
+        bool playerBlackJack = IsBlackJack(playerHands[0].Cards);
+        bool dealerBlackJack = IsBlackJack(dealerHand);
+
+        if (playerBlackJack && dealerBlackJack) return EndState.Push;
+        if (playerBlackJack) return EndState.PlayerBlackJack;
+        if (dealerBlackJack) return EndState.DealerBlackJack;
+        return null;
+    }
+
+    private bool IsBlackJack(List<Card> hand)
+    {
+        return hand.Count == 2 && CalculateHandScore(hand) == 21;
+    }
+
+    void SetActionButtonsInteractable(bool interactable)
+    {
+        hitButton.interactable = interactable;
+        standButton.interactable = interactable;
+        doubleDownButton.interactable = interactable && CanDoubleDown();
+        splitButton.interactable = interactable && CanSplit();
+    }
+
+    bool CanDoubleDown()
+    {
+        if (activeHandIndex >= playerHands.Count) return false;
+        PlayerHand hand = ActiveHand;
+        return !hand.IsDone && hand.Cards.Count == 2 && chips >= hand.Bet;
+    }
+
+    // One split per round, on any two cards of equal value (e.g. K + 10)
+    bool CanSplit()
+    {
+        if (splitHandContainer == null || IsSplit || activeHandIndex >= playerHands.Count) return false;
+        PlayerHand hand = ActiveHand;
+        return !hand.IsDone
+               && hand.Cards.Count == 2
+               && hand.Cards[0].GetValue() == hand.Cards[1].GetValue()
+               && chips >= hand.Bet;
+    }
+
+    // Moves to the next hand that still needs decisions, or hands over to the dealer once all are done
+    IEnumerator ContinuePlayerTurn()
+    {
+        while (activeHandIndex < playerHands.Count && ActiveHand.IsDone) activeHandIndex++;
+
+        UpdateHandHighlights();
+        UpdateUI();
+
+        if (activeHandIndex < playerHands.Count)
         {
-            EndGame(EndState.Push);
+            SetActionButtonsInteractable(true);
+            yield break;
         }
-        else if (playerBlackJack)
+
+        yield return DealerTurnSequence();
+    }
+
+    // Marks the hand finished if it bust or reached 21, so the player isn't asked to act on it
+    void CheckHandFinished(PlayerHand hand)
+    {
+        int score = CalculateHandScore(hand.Cards);
+        if (score > 21)
         {
-            EndGame(EndState.PlayerWin);
+            hand.Result = EndState.PlayerBust;
+            hand.IsDone = true;
         }
-        else
+        else if (score == 21)
         {
-            EndGame(EndState.DealerBlackJack);
+            hand.IsDone = true;
         }
+    }
+
+    // Dims the hand that isn't being played after a split
+    void UpdateHandHighlights()
+    {
+        bool isPlayerTurn = activeHandIndex < playerHands.Count;
+        foreach (PlayerHand hand in playerHands)
+        {
+            bool isDimmed = IsSplit && isPlayerTurn && hand != ActiveHand;
+            GetContainerCanvasGroup(hand.Container).alpha = isDimmed ? 0.5f : 1f;
+        }
+    }
+
+    CanvasGroup GetContainerCanvasGroup(Transform container)
+    {
+        CanvasGroup group = container.GetComponent<CanvasGroup>();
+        if (group == null) group = container.gameObject.AddComponent<CanvasGroup>();
+        return group;
     }
 
     void ClearHandContainers()
     {
         foreach (Transform child in playerHandContainer) Destroy(child.gameObject);
         foreach (Transform child in dealerHandContainer) Destroy(child.gameObject);
+        GetContainerCanvasGroup(playerHandContainer).alpha = 1f;
+
+        if (splitHandContainer != null)
+        {
+            foreach (Transform child in splitHandContainer) Destroy(child.gameObject);
+            GetContainerCanvasGroup(splitHandContainer).alpha = 1f;
+            splitHandContainer.gameObject.SetActive(false);
+        }
 
         dealerHoleCardDisplay = null;
         dealerHoleCard = null;
@@ -103,7 +308,20 @@ public class BlackJackManager : MonoBehaviour
 
     void UpdateUI()
     {
-        playerText.text = $"Player: {CalculateHandScore(playerHand)}";
+        if (IsSplit)
+        {
+            List<string> handScores = new List<string>();
+            for (int i = 0; i < playerHands.Count; i++)
+            {
+                string marker = i == activeHandIndex ? "> " : "";
+                handScores.Add($"{marker}Hand {i + 1}: {CalculateHandScore(playerHands[i].Cards)}");
+            }
+            playerText.text = string.Join("   ", handScores);
+        }
+        else if (playerHands.Count == 1)
+        {
+            playerText.text = $"Player: {CalculateHandScore(playerHands[0].Cards)}";
+        }
 
         // While the hole card is hidden, display only the value of dealer's visible first card
         if (isHoleCardHidden && dealerHand.Count >= 1)
@@ -147,6 +365,7 @@ public class BlackJackManager : MonoBehaviour
     }
     void CreateDeck()
     {
+        deck.Clear();
         foreach (Suit suit in Enum.GetValues(typeof(Suit)))
         {
             foreach (Rank rank in Enum.GetValues(typeof(Rank)))
@@ -176,19 +395,20 @@ public class BlackJackManager : MonoBehaviour
 
     public void OnHitButtonClicked()
     {
-        StartCoroutine(DealCardToPlayer());
-        if (CalculateHandScore(playerHand) > 21)
-        {
-            // Reveal hole card when player busts so they can see what dealer had
-            StartCoroutine(RevealDealerHoleCardAnimated());
-            UpdateUI();
-            EndGame(EndState.PlayerBust);
-        }
+        StartCoroutine(PlayerHitSequence());
     }
-    IEnumerator DealCardToPlayer()
+    IEnumerator PlayerHitSequence()
     {
-        yield return DealCardAnimated(playerHand, playerHandContainer);
+        // Lock input until the card has landed so the player can't spam hits mid-animation
+        SetActionButtonsInteractable(false);
+
+        PlayerHand hand = ActiveHand;
+        yield return DealCardAnimated(hand.Cards, hand.Container);
         UpdateUI();
+
+        // Bust ends the hand; 21 also ends it since there's nothing to gain by hitting
+        CheckHandFinished(hand);
+        yield return ContinuePlayerTurn();
     }
     
     public IEnumerator RevealDealerHoleCardAnimated()
@@ -229,71 +449,226 @@ public class BlackJackManager : MonoBehaviour
     }
     public void OnStandButtonClicked()
     {
-        StartCoroutine(DealerTurnSequence());
+        if (activeHandIndex >= playerHands.Count) return;
+        SetActionButtonsInteractable(false);
+        ActiveHand.IsDone = true;
+        StartCoroutine(ContinuePlayerTurn());
     }
 
     IEnumerator DealerTurnSequence()
     {
-        hitButton.interactable = false;
-        standButton.interactable = false;
+        SetActionButtonsInteractable(false);
+        UpdateHandHighlights();
 
         // 1. Reveal Hole Card with flip animation
         yield return RevealDealerHoleCardAnimated();
         yield return new WaitForSeconds(0.3f);
 
-        // 2. Dealer draws step-by-step with delay
-        while (CalculateHandScore(dealerHand) < 17)
+        // 2. Dealer draws step-by-step with delay, unless every player hand already bust
+        if (playerHands.Exists(hand => !hand.Result.HasValue))
         {
-            yield return DealCardAnimated(dealerHand, dealerHandContainer, isFaceDown: false);
-            UpdateUI();
-            yield return new WaitForSeconds(0.3f);
+            while (CalculateHandScore(dealerHand) < 17)
+            {
+                yield return DealCardAnimated(dealerHand, dealerHandContainer, isFaceDown: false);
+                UpdateUI();
+                yield return new WaitForSeconds(0.3f);
+            }
         }
 
-        EvaluateWinner();
+        foreach (PlayerHand hand in playerHands)
+        {
+            if (!hand.Result.HasValue) hand.Result = EvaluateWinner(hand);
+        }
+
+        yield return EndGame();
     }
 
     public void OnDoubleDownButtonClicked()
     {
-        
+        if (!CanDoubleDown()) return;
+        StartCoroutine(DoubleDownSequence());
+    }
+
+    // Doubles the bet, takes exactly one more card, then the hand is finished
+    IEnumerator DoubleDownSequence()
+    {
+        SetActionButtonsInteractable(false);
+
+        PlayerHand hand = ActiveHand;
+        chips -= hand.Bet;
+        hand.Bet *= 2;
+        hand.IsDoubled = true;
+        UpdateBettingUI();
+
+        yield return DealCardAnimated(hand.Cards, hand.Container);
+        UpdateUI();
+
+        CheckHandFinished(hand);
+        hand.IsDone = true;
+        yield return ContinuePlayerTurn();
     }
 
     public void OnSplitButtonClicked()
     {
-        
+        if (!CanSplit()) return;
+        StartCoroutine(SplitSequence());
     }
-    void EvaluateWinner()
+
+    // Splits the pair into two hands with equal bets, then deals one new card to each
+    IEnumerator SplitSequence()
     {
-        int pScore = CalculateHandScore(playerHand);
+        SetActionButtonsInteractable(false);
+
+        PlayerHand firstHand = ActiveHand;
+        PlayerHand secondHand = new PlayerHand { Container = splitHandContainer, Bet = firstHand.Bet };
+        chips -= secondHand.Bet;
+        playerHands.Insert(activeHandIndex + 1, secondHand);
+        UpdateBettingUI();
+
+        // Move the second card (data and visual) over to the split row
+        Card movedCard = firstHand.Cards[1];
+        firstHand.Cards.RemoveAt(1);
+        secondHand.Cards.Add(movedCard);
+
+        splitHandContainer.gameObject.SetActive(true);
+        Transform movedCardObj = firstHand.Container.GetChild(1);
+        Vector3 oldPosition = movedCardObj.position;
+        movedCardObj.SetParent(splitHandContainer, worldPositionStays: true);
+        LayoutRebuilder.ForceRebuildLayoutImmediate(firstHand.Container.GetComponent<RectTransform>());
+        LayoutRebuilder.ForceRebuildLayoutImmediate(splitHandContainer.GetComponent<RectTransform>());
+        UpdateUI();
+        yield return movedCardObj.GetComponent<CardDisplay>().AnimateMoveFrom(oldPosition, moveDuration);
+
+        yield return DealCardAnimated(firstHand.Cards, firstHand.Container);
+        yield return new WaitForSeconds(0.15f);
+        yield return DealCardAnimated(secondHand.Cards, secondHand.Container);
+
+        // Split aces only get one card each
+        bool splitAces = movedCard.Rank == Rank.Ace;
+        foreach (PlayerHand hand in new[] { firstHand, secondHand })
+        {
+            CheckHandFinished(hand);
+            if (splitAces) hand.IsDone = true;
+        }
+
+        yield return ContinuePlayerTurn();
+    }
+
+    EndState EvaluateWinner(PlayerHand hand)
+    {
+        int pScore = CalculateHandScore(hand.Cards);
         int dScore = CalculateHandScore(dealerHand);
 
-        if (dScore > 21)
-        {
-            EndGame(EndState.DealerBust);
-        }
-        else if (pScore > dScore) EndGame(EndState.PlayerWin);
-        else if (dScore > pScore) EndGame(EndState.DealerWin);
-        else EndGame(EndState.Push);
+        if (dScore > 21) return EndState.DealerBust;
+        if (pScore > dScore) return EndState.PlayerWin;
+        if (dScore > pScore) return EndState.DealerWin;
+        return EndState.Push;
     }
 
-    void EndGame(EndState endState)
+    // Expects every player hand to have a Result
+    IEnumerator EndGame()
     {
-        if (endState == EndState.DealerWin)
+        SetActionButtonsInteractable(false);
+
+        // Always show the dealer's full hand so the player can see why the round ended
+        yield return RevealDealerHoleCardAnimated();
+        UpdateUI();
+
+        int net = 0;
+        List<string> lines = new List<string>();
+        for (int i = 0; i < playerHands.Count; i++)
         {
-            statusText.text = "Dealer has a higher score. You lose...";
-            //Take player chips
+            PlayerHand hand = playerHands[i];
+            int handNet = SettleBet(hand);
+            net += handNet;
+
+            string line = GetEndStateMessage(hand.Result.Value, hand);
+            if (hand.IsDoubled) line = $"Doubled down. {line}";
+            if (IsSplit) line = $"Hand {i + 1}: {line} ({FormatNetResult(handNet)})";
+            lines.Add(line);
         }
-        else if (endState == EndState.PlayerWin)
+        UpdateBettingUI();
+
+        string message = $"{string.Join("\n", lines)}\n{FormatNetResult(net)}";
+
+        if (IsSessionOver())
         {
-            statusText.text = "You win!";
-            //Payout chips
+            message += chips <= 0
+                ? "\nYou're out of chips. Today's score: 0"
+                : $"\nDay over! You cash out {chips} chips.";
         }
-        
-        
-        hitButton.interactable = false;
-        standButton.interactable = false;
+        else
+        {
+            startNewGameButton.gameObject.SetActive(true);
+        }
+
+        statusText.text = message;
+    }
+
+    // Pays out the bet (already deducted on deal) and returns the net change in chips for the hand
+    int SettleBet(PlayerHand hand)
+    {
+        int bet = hand.Bet;
+        int payout;
+        switch (hand.Result.Value)
+        {
+            case EndState.PlayerBlackJack:
+                payout = bet + bet * 3 / 2; // 3:2, rounded down
+                break;
+            case EndState.PlayerWin:
+            case EndState.DealerBust:
+                payout = bet * 2;
+                break;
+            case EndState.Push:
+                payout = bet;
+                break;
+            default:
+                payout = 0;
+                break;
+        }
+
+        chips += payout;
+        return payout - bet;
+    }
+
+    string FormatNetResult(int net)
+    {
+        if (net > 0) return $"+{net} chips";
+        if (net < 0) return $"-{-net} chips";
+        return "Bet returned";
+    }
+
+    string GetEndStateMessage(EndState endState, PlayerHand hand)
+    {
+        int pScore = CalculateHandScore(hand.Cards);
+        int dScore = CalculateHandScore(dealerHand);
+
+        switch (endState)
+        {
+            case EndState.PlayerBlackJack:
+                return "Blackjack! You win!";
+            case EndState.DealerBlackJack:
+                return "Dealer has Blackjack. You lose...";
+            case EndState.PlayerBust:
+                return $"You bust with {pScore}. You lose...";
+            case EndState.DealerBust:
+                return $"Dealer busts with {dScore}. You win!";
+            case EndState.PlayerWin:
+                return $"Your {pScore} beats the dealer's {dScore}. You win!";
+            case EndState.DealerWin:
+                return $"Dealer's {dScore} beats your {pScore}. You lose...";
+            case EndState.Push:
+                if (IsBlackJack(hand.Cards) && IsBlackJack(dealerHand))
+                    return "You and the dealer both have Blackjack. Push.";
+                return $"You and the dealer both have {pScore}. Push.";
+            default:
+                return "";
+        }
     }
     
+
 }
+
 
 public enum EndState
 {
