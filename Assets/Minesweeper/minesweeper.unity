@@ -491,7 +491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 227a9fe7682d14159b69a79356d50bde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  buttonPrefab: {fileID: 2358006771327049919, guid: 0a8a4abfa86644c3d8d05dc1d8af178d, type: 3}
+  buttonPrefab: {fileID: 2358006771327049919, guid: bd9101999393d4ab08e21fa97c798cab, type: 3}
   boardPanel: {fileID: 211822434}
   flagCounterText: {fileID: 1161880623}
   timerText: {fileID: 2006005647}
