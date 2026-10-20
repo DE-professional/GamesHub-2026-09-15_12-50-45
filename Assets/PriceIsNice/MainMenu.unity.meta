@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Minesweeper/TextMesh Pro/Examples & Extras/Scenes/26 - Dropdown Placeholder Example.unity.meta
+guid: 0851605490a599b46b6ac5cb681d93ea
+========
 guid: 0bad7655265ee47eba75d0b891c20cdd
+>>>>>>>> main:Assets/PriceIsNice/MainMenu.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

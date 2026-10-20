@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Minesweeper.meta
+guid: 9aef324c173ca43bf821b660c195ee86
+========
 guid: 9c53962885c2c4f449125a979d6ad240
+>>>>>>>> main:Assets/Blackjack/uVegas/Scenes.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
