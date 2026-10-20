@@ -12,6 +12,103 @@
   <component name="ChangeListManager">
     <list default="true" id="c37f049f-f16a-49c3-b677-3fa581fbd580" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GamesHub-2026-09-15_12-50-45/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GamesHub-2026-09-15_12-50-45/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Blackjack/BlackJackManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blackjack/BlackJackManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Blackjack/Blackjack.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blackjack/Blackjack.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Blackjack/Card.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blackjack/Card.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Blackjack/CardAtlas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blackjack/CardAtlas.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Blackjack/CardDisplay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blackjack/CardDisplay.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Blackjack/Images/Image.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blackjack/Images/Image.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CanvasRumble.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CanvasRumble.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Carousel Indicator.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Carousel Indicator.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ClaudeCarousel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ClaudeCarousel.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EntryPrefab.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EntryPrefab.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ext Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ext Scripts/Carousel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ext Scripts/Carousel.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ext Scripts/CarouselButton.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ext Scripts/CarouselButton.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ext Scripts/CarouselEntry.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ext Scripts/CarouselEntry.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ext Scripts/CarouselIndicator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ext Scripts/CarouselIndicator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ext Scripts/CarouselTextBox.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ext Scripts/CarouselTextBox.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-Bold.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-BoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-BoldItalic.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-ExtraLight.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-ExtraLight.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-ExtraLightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-ExtraLightItalic.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-Italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-Italic.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-Light.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-LightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-LightItalic.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-MediumItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-MediumItalic.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-Regular.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-SemiBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-SemiBold.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-SemiBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-SemiBoldItalic.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-Thin.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-Thin.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-ThinItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-ThinItalic.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GuessTracker.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GuessTracker.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ImageDisplay.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ImageDisplay.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LoadImageFromURL.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LoadImageFromURL.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MainMenu.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MainMenu.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MainText.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MainText.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Carousel Image.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Carousel Image.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/IMGCarousel.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/IMGCarousel.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PriceIsNice.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PriceIsNice.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SpriteUrlLoader.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SpriteUrlLoader.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Square 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Square 1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Square.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Square.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Steam Game.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Steam Game.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SteamGame.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SteamGame.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Timer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Timer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/arrow_back_ios_100dp_E3E3E3_FILL0_wght400_GRAD0_opsz48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/arrow_back_ios_100dp_E3E3E3_FILL0_wght400_GRAD0_opsz48.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/arrow_forward_ios_100dp_E3E3E3_FILL0_wght400_GRAD0_opsz48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/arrow_forward_ios_100dp_E3E3E3_FILL0_wght400_GRAD0_opsz48.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/fatass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/fatass.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/radio_button_checked_70dp_E3E3E3_FILL0_wght400_GRAD0_opsz48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/radio_button_checked_70dp_E3E3E3_FILL0_wght400_GRAD0_opsz48.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/radio_button_unchecked_70dp_E3E3E3_FILL0_wght400_GRAD0_opsz48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/radio_button_unchecked_70dp_E3E3E3_FILL0_wght400_GRAD0_opsz48.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/testimg2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/testimg2.jpg.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,10 +150,10 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c5ae8a4eeb824526b5df2932bc2395e046ae00/57/6212bcde/TaskAwaiter`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c5ae8a4eeb824526b5df2932bc2395e046ae00/8a/30e89189/Math.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c5ae8a4eeb824526b5df2932bc2395e046ae00/ba/b57ec483/AsyncMethodBuilderCore.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Blackjack/Outcomes.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ClaudeCarousel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/LoadImageFromURL.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SteamGame.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Immediate Window" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="McpProjectServerCommands">
     <commands />
@@ -65,61 +162,61 @@
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000022112477025" />
-      <entry key="MS500" value="1.1359459161620418" />
-      <entry key="S2" value="3.539968581099173" />
-      <entry key="S5" value="6.680805043643534" />
-      <entry key="S10" value="9.002924653697818" />
-      <entry key="S30" value="11.775782275015354" />
-      <entry key="S60" value="12.819298997805923" />
-      <entry key="M2" value="14.421782203214367" />
-      <entry key="M5" value="28.314574076750326" />
-      <entry key="M10" value="58.896054354481" />
-      <entry key="M15" value="87.6921495973551" />
-      <entry key="M30" value="166.0720121589748" />
-      <entry key="H1" value="280.5269227035175" />
-      <entry key="H2" value="404.7437629269352" />
-      <entry key="H4" value="507.67173376454514" />
-      <entry key="D1" value="632.090455630134" />
-      <entry key="W1" value="658.4369249016806" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0" />
+      <entry key="S30" value="1.0000003846908485" />
+      <entry key="S60" value="1.0018327208813698" />
+      <entry key="M2" value="1.1454817122056131" />
+      <entry key="M5" value="3.634425170718959" />
+      <entry key="M10" value="13.78609533573997" />
+      <entry key="M15" value="29.701187560781875" />
+      <entry key="M30" value="82.86724657802066" />
+      <entry key="H1" value="168.12855168381466" />
+      <entry key="H2" value="286.4509435571074" />
+      <entry key="H4" value="464.74062828417965" />
+      <entry key="D1" value="964.1727126734768" />
+      <entry key="W1" value="1139.3887767837314" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="5.058073397422731E-59" />
-      <entry key="MS500" value="2.8912627816604045E-12" />
-      <entry key="S2" value="0.0023031323404826476" />
-      <entry key="S5" value="0.17629497390001256" />
-      <entry key="S10" value="0.8150104831562126" />
-      <entry key="S30" value="2.3372947926969263" />
-      <entry key="S60" value="3.058188119793939" />
-      <entry key="M2" value="3.5871073767549095" />
-      <entry key="M5" value="5.318198366272352" />
-      <entry key="M10" value="9.205982651694624" />
-      <entry key="M15" value="13.39059047196562" />
-      <entry key="M30" value="27.172333463032924" />
-      <entry key="H1" value="51.554442197126725" />
-      <entry key="H2" value="81.83652772186547" />
-      <entry key="H4" value="109.11835216457582" />
-      <entry key="D1" value="144.05288114323037" />
-      <entry key="W1" value="151.67320439536013" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="2.9498924222833047E-109" />
+      <entry key="S5" value="3.87189257919372E-44" />
+      <entry key="S10" value="1.9715495572354677E-22" />
+      <entry key="S30" value="6.994674061470929E-8" />
+      <entry key="S60" value="4.0883750595722046E-4" />
+      <entry key="M2" value="0.037022716087841155" />
+      <entry key="M5" value="0.6905463111451831" />
+      <entry key="M10" value="3.032702627196924" />
+      <entry key="M15" value="6.2855365413640945" />
+      <entry key="M30" value="16.159453927281238" />
+      <entry key="H1" value="32.02636334681128" />
+      <entry key="H2" value="55.947611021061604" />
+      <entry key="H4" value="94.46663562192398" />
+      <entry key="D1" value="209.34161014213262" />
+      <entry key="W1" value="250.96203250880868" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9659384798120482" />
-      <entry key="MS500" value="1.1282651353011517" />
-      <entry key="S2" value="3.535592132899593" />
-      <entry key="S5" value="6.81356617567531" />
-      <entry key="S10" value="9.718489052066554" />
-      <entry key="S30" value="14.016008423117086" />
-      <entry key="S60" value="15.813464333630577" />
-      <entry key="M2" value="17.969155313097968" />
-      <entry key="M5" value="33.599221025420434" />
-      <entry key="M10" value="68.06739622554119" />
-      <entry key="M15" value="101.04836918199489" />
-      <entry key="M30" value="193.21049896617123" />
-      <entry key="H1" value="332.0506262947007" />
-      <entry key="H2" value="486.5564947620304" />
-      <entry key="H4" value="616.7743965557522" />
-      <entry key="D1" value="776.1399110368662" />
-      <entry key="W1" value="810.1096145994941" />
+      <entry key="MS100" value="1.8631093859381825E-4" />
+      <entry key="MS500" value="0.17949306382792943" />
+      <entry key="S2" value="0.6508964721620937" />
+      <entry key="S5" value="0.8421796964126531" />
+      <entry key="S10" value="0.9177034904655497" />
+      <entry key="S30" value="0.9717793396634697" />
+      <entry key="S60" value="0.9880157064961266" />
+      <entry key="M2" value="1.1747782442834223" />
+      <entry key="M5" value="4.317669222700313" />
+      <entry key="M10" value="16.808258617860904" />
+      <entry key="M15" value="35.973635719858756" />
+      <entry key="M30" value="99.01055817923564" />
+      <entry key="H1" value="200.13827805961515" />
+      <entry key="H2" value="342.3834145384503" />
+      <entry key="H4" value="559.1941684553732" />
+      <entry key="D1" value="1173.509411369188" />
+      <entry key="W1" value="1390.3499668654918" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -148,7 +245,7 @@
     &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.2886836&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;priceIsNice&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Blackjack&quot;,
     &quot;git.auto.fetch.suggestion.counter&quot;: &quot;1&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -232,8 +329,9 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Gets ALL images for a game and puts them in an interactive carousel. Also has a &quot;fetching game&quot; state to indicate that the program is busy. No game logic yet." />
-    <MESSAGE value="Restructured files for better organization" />
-    <option name="LAST_COMMIT_MESSAGE" value="Restructured files for better organization" />
+    <MESSAGE value="Working on the actual game" />
+    <MESSAGE value="Work" />
+    <option name="LAST_COMMIT_MESSAGE" value="Work" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
