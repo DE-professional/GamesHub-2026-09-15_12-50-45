@@ -496,8 +496,8 @@ MonoBehaviour:
   flagCounterText: {fileID: 1161880623}
   timerText: {fileID: 2006005647}
   highScoreText: {fileID: 1546268181}
-  minMines: 399
-  maxMines: 400
+  minMines: 40
+  maxMines: 60
 --- !u!4 &1116674598
 Transform:
   m_ObjectHideFlags: 0
