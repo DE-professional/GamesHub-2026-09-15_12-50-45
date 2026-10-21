@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakeProjectFlavorService">
+    <option name="flavorId" value="CMakePlainProjectFlavor" />
+  </component>
+  <component name="CMakeSettings">
+    <configurations />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c37f049f-f16a-49c3-b677-3fa581fbd580" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GamesHub-2026-09-15_12-50-45/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GamesHub-2026-09-15_12-50-45/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Blackjack/BlackJackManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blackjack/BlackJackManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Blackjack/Blackjack.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blackjack/Blackjack.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Blackjack/Card.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blackjack/Card.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Blackjack/CardAtlas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blackjack/CardAtlas.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Blackjack/CardDisplay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blackjack/CardDisplay.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Blackjack/Images/Image.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blackjack/Images/Image.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CanvasRumble.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CanvasRumble.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Carousel Indicator.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Carousel Indicator.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ClaudeCarousel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ClaudeCarousel.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EntryPrefab.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EntryPrefab.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ext Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ext Scripts/Carousel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ext Scripts/Carousel.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ext Scripts/CarouselButton.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ext Scripts/CarouselButton.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ext Scripts/CarouselEntry.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ext Scripts/CarouselEntry.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ext Scripts/CarouselIndicator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ext Scripts/CarouselIndicator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ext Scripts/CarouselTextBox.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ext Scripts/CarouselTextBox.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-Bold.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-BoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-BoldItalic.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-ExtraLight.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-ExtraLight.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-ExtraLightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-ExtraLightItalic.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-Italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-Italic.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-Light.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-LightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-LightItalic.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-MediumItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-MediumItalic.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-Regular.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-SemiBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-SemiBold.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-SemiBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-SemiBoldItalic.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-Thin.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-Thin.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-ThinItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/IBMPlexMono-ThinItalic.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GuessTracker.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GuessTracker.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ImageDisplay.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ImageDisplay.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LoadImageFromURL.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LoadImageFromURL.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MainMenu.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MainMenu.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MainText.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MainText.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Carousel Image.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Carousel Image.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/IMGCarousel.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/IMGCarousel.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PriceIsNice.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PriceIsNice.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SpriteUrlLoader.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SpriteUrlLoader.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Square 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Square 1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Square.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Square.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Steam Game.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Steam Game.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SteamGame.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SteamGame.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Timer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Timer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/arrow_back_ios_100dp_E3E3E3_FILL0_wght400_GRAD0_opsz48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/arrow_back_ios_100dp_E3E3E3_FILL0_wght400_GRAD0_opsz48.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/arrow_forward_ios_100dp_E3E3E3_FILL0_wght400_GRAD0_opsz48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/arrow_forward_ios_100dp_E3E3E3_FILL0_wght400_GRAD0_opsz48.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/fatass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/fatass.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/radio_button_checked_70dp_E3E3E3_FILL0_wght400_GRAD0_opsz48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/radio_button_checked_70dp_E3E3E3_FILL0_wght400_GRAD0_opsz48.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/radio_button_unchecked_70dp_E3E3E3_FILL0_wght400_GRAD0_opsz48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/radio_button_unchecked_70dp_E3E3E3_FILL0_wght400_GRAD0_opsz48.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/testimg2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/testimg2.jpg.meta" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+      <option value="repository" />
+    </option>
+  </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="2" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Blackjack" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/7259672740c441d987325dcf724e83576e00/2b/22584abd/02000002pdb1.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/d860b2654e7240e6aa37a882408ee2117400/15/8ba9ebc7/02000019pdb6.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/d860b2654e7240e6aa37a882408ee2117400/69/656c2163/0200000Cpdb7.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/d860b2654e7240e6aa37a882408ee2117400/be/9f5e65bb/02000016pdb3.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/d860b2654e7240e6aa37a882408ee2117400/f1/fa50b51b/02000002pdb1.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5d8f15b2b58c41eeb63317e0004d8aa86000/06/529956a6/JsonUtility.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c5ae8a4eeb824526b5df2932bc2395e046ae00/00/9b90bffa/Task.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c5ae8a4eeb824526b5df2932bc2395e046ae00/07/480279d8/List`1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c5ae8a4eeb824526b5df2932bc2395e046ae00/09/0dc2fb08/AwaitTaskContinuation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c5ae8a4eeb824526b5df2932bc2395e046ae00/1f/38bedd14/AsyncTaskMethodBuilder`1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c5ae8a4eeb824526b5df2932bc2395e046ae00/48/d31e53eb/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c5ae8a4eeb824526b5df2932bc2395e046ae00/57/6212bcde/TaskAwaiter`1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c5ae8a4eeb824526b5df2932bc2395e046ae00/8a/30e89189/Math.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c5ae8a4eeb824526b5df2932bc2395e046ae00/ba/b57ec483/AsyncMethodBuilderCore.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Blackjack/Outcomes.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ClaudeCarousel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/LoadImageFromURL.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SteamGame.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0" />
+      <entry key="S30" value="1.0000003846908485" />
+      <entry key="S60" value="1.0018327208813698" />
+      <entry key="M2" value="1.1454817122056131" />
+      <entry key="M5" value="3.634425170718959" />
+      <entry key="M10" value="13.78609533573997" />
+      <entry key="M15" value="29.701187560781875" />
+      <entry key="M30" value="82.86724657802066" />
+      <entry key="H1" value="168.12855168381466" />
+      <entry key="H2" value="286.4509435571074" />
+      <entry key="H4" value="464.74062828417965" />
+      <entry key="D1" value="964.1727126734768" />
+      <entry key="W1" value="1139.3887767837314" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="2.9498924222833047E-109" />
+      <entry key="S5" value="3.87189257919372E-44" />
+      <entry key="S10" value="1.9715495572354677E-22" />
+      <entry key="S30" value="6.994674061470929E-8" />
+      <entry key="S60" value="4.0883750595722046E-4" />
+      <entry key="M2" value="0.037022716087841155" />
+      <entry key="M5" value="0.6905463111451831" />
+      <entry key="M10" value="3.032702627196924" />
+      <entry key="M15" value="6.2855365413640945" />
+      <entry key="M30" value="16.159453927281238" />
+      <entry key="H1" value="32.02636334681128" />
+      <entry key="H2" value="55.947611021061604" />
+      <entry key="H4" value="94.46663562192398" />
+      <entry key="D1" value="209.34161014213262" />
+      <entry key="W1" value="250.96203250880868" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="1.8631093859381825E-4" />
+      <entry key="MS500" value="0.17949306382792943" />
+      <entry key="S2" value="0.6508964721620937" />
+      <entry key="S5" value="0.8421796964126531" />
+      <entry key="S10" value="0.9177034904655497" />
+      <entry key="S30" value="0.9717793396634697" />
+      <entry key="S60" value="0.9880157064961266" />
+      <entry key="M2" value="1.1747782442834223" />
+      <entry key="M5" value="4.317669222700313" />
+      <entry key="M10" value="16.808258617860904" />
+      <entry key="M15" value="35.973635719858756" />
+      <entry key="M30" value="99.01055817923564" />
+      <entry key="H1" value="200.13827805961515" />
+      <entry key="H2" value="342.3834145384503" />
+      <entry key="H4" value="559.1941684553732" />
+      <entry key="D1" value="1173.509411369188" />
+      <entry key="W1" value="1390.3499668654918" />
+    </decayedShown>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3JQVkaHj2gE5yMCNc09RrJRegbq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.2886836&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Blackjack&quot;,
+    &quot;git.auto.fetch.suggestion.counter&quot;: &quot;1&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.C#&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.6.0f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\Grungle\repos\GamesHub-2026-09-15_12-50-45 -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\Grungle\repos\GamesHub-2026-09-15_12-50-45" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.6.0f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\Grungle\repos\GamesHub-2026-09-15_12-50-45 -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\Grungle\repos\GamesHub-2026-09-15_12-50-45" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" useMixedMode="false">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to" type="UnityDevicePlayer" factoryName="UnityAttachToDevicePlayer">
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c37f049f-f16a-49c3-b677-3fa581fbd580" name="Changes" comment="" />
+      <created>1789593423977</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1789593423977</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityProjectDiscoverer">
+    <option name="hasUnityReference" value="true" />
+    <option name="unityProject" value="true" />
+    <option name="unityProjectFolder" value="true" />
+  </component>
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Gets ALL images for a game and puts them in an interactive carousel. Also has a &quot;fetching game&quot; state to indicate that the program is busy. No game logic yet." />
+    <MESSAGE value="Working on the actual game" />
+    <MESSAGE value="Work" />
+    <option name="LAST_COMMIT_MESSAGE" value="Work" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Type#StoreDetailsData" memberName="price_overview" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
