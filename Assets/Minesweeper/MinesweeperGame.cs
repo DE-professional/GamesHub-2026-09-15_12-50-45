@@ -13,6 +13,8 @@ public class MinesweeperGame : MonoBehaviour
     public TextMeshProUGUI flagCounterText;
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI highScoreText;
+    public GameObject titlePanel;
+    public GameObject returnToMenuButton; // Shown once the game is won or lost
 
     [Header("Game Settings")]
     private int width = 20;
@@ -39,15 +41,30 @@ public class MinesweeperGame : MonoBehaviour
         public int adjacentMines;
         public GameObject uiButton;
     }
-
+    
+    
     void Start()
     {
+        if (titlePanel != null)
+        {
+            titlePanel.SetActive(true);
+        }
+        else
+        {
+            StartGame();
+        }
+        if (returnToMenuButton != null) returnToMenuButton.SetActive(false);
         mineCount = UnityEngine.Random.Range (minMines, maxMines);
         flagsRemaining = mineCount;
         
         UpdateFlagText();
         LoadHighScore(); // This also checks if a new day has started
         GenerateBoard();
+    }
+
+    public void StartGame()
+    {
+        
     }
 
     void Update()
@@ -260,6 +277,7 @@ public class MinesweeperGame : MonoBehaviour
         gameOver = true;
         clickedMine.uiButton.GetComponent<Image>().color = Color.red;
         Debug.Log("Game Over!");
+        if (returnToMenuButton != null) returnToMenuButton.SetActive(true);
         
         foreach (var cell in grid)
         {
@@ -292,6 +310,7 @@ public class MinesweeperGame : MonoBehaviour
         {
             gameOver = true;
             Debug.Log("You Win!");
+            if (returnToMenuButton != null) returnToMenuButton.SetActive(true);
             SaveHighScore();
         }
     }

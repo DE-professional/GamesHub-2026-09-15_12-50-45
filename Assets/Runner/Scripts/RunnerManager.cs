@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
@@ -50,6 +51,9 @@ public class RunnerManager : MonoBehaviour
             StartGame();
         else
             titlePanel.SetActive(true);
+
+        // Only skip once, so coming back from the main menu shows the title again
+        skipTitle = false;
     }
 
     // Wired to the title screen's Start button
@@ -109,9 +113,13 @@ public class RunnerManager : MonoBehaviour
 
     bool RestartPressed()
     {
-        return (Keyboard.current != null && (Keyboard.current.spaceKey.wasPressedThisFrame || Keyboard.current.rKey.wasPressedThisFrame))
-            || (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
+        if (Keyboard.current != null && (Keyboard.current.spaceKey.wasPressedThisFrame || Keyboard.current.rKey.wasPressedThisFrame))
+            return true;
+
+        // Clicks on the game-over panel's buttons (e.g. Return to Menu) aren't restarts
+        bool pointerPressed = (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
             || (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.wasPressedThisFrame);
+        return pointerPressed && (EventSystem.current == null || !EventSystem.current.IsPointerOverGameObject());
     }
 
     bool StartKeyPressed()

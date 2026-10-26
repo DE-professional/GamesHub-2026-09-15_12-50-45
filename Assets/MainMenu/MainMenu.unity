@@ -627,14 +627,12 @@ MonoBehaviour:
   gameTitle: GamesHub
   gameDisplayNames:
   - Price is Nice
-  - Guess the Tower
   - Blackjack
   - Runner
   - Minesweeper
   - Sudoku
   gameSceneNames:
   - PriceIsNice
-  - GuessTheTower
   - Blackjack
   - Runner
   - minesweeper
