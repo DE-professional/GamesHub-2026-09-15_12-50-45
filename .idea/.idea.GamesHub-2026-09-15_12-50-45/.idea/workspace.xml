@@ -10,10 +10,13 @@
     <configurations />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c37f049f-f16a-49c3-b677-3fa581fbd580" name="Changes" comment="">
+    <list default="true" id="c37f049f-f16a-49c3-b677-3fa581fbd580" name="Changes" comment="Runner: Added parallax scrolling BG objects, and a sky texture">
+      <change afterPath="$PROJECT_DIR$/Assets/Runner/Scripts/RunnerParallaxScatter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Runner/Scripts/RunnerParallaxScatter.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GamesHub-2026-09-15_12-50-45/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GamesHub-2026-09-15_12-50-45/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runner/Runner.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runner/Runner.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runner/Store Assets/Bolt 2D DinoRun VE1/Sprites/Back A.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runner/Store Assets/Bolt 2D DinoRun VE1/Sprites/Back A.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runner/Store Assets/Bolt 2D DinoRun VE1/Sprites/Sky.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runner/Store Assets/Bolt 2D DinoRun VE1/Sprites/Sky.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +43,11 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="e3680443-cb02-4a27-8d07-c7abccc07cd6" />
+  </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Runner/Prefabs/Bird.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Runner/Scripts/RunnerManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="McpProjectServerCommands">
@@ -50,61 +57,61 @@
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0011694127974795" />
-      <entry key="MS500" value="1.2591752752549301" />
-      <entry key="S2" value="1.7135072528589395" />
-      <entry key="S5" value="1.8736940072292605" />
-      <entry key="S10" value="1.9347160035161806" />
-      <entry key="S30" value="1.9777475278356875" />
-      <entry key="S60" value="1.9906231932829273" />
-      <entry key="M2" value="2.139055275646844" />
-      <entry key="M5" value="4.626255391610288" />
-      <entry key="M10" value="14.770591822234975" />
-      <entry key="M15" value="30.67891588774111" />
-      <entry key="M30" value="83.83617141763189" />
-      <entry key="H1" value="169.09702468234835" />
-      <entry key="H2" value="287.42408505320964" />
-      <entry key="H4" value="465.71884003236244" />
-      <entry key="D1" value="965.1651787047193" />
-      <entry key="W1" value="1140.3875049090261" />
+      <entry key="MS100" value="1.0062549607866413" />
+      <entry key="MS500" value="1.6860534885878617" />
+      <entry key="S2" value="4.294810859562885" />
+      <entry key="S5" value="9.134190597786311" />
+      <entry key="S10" value="15.091798140179778" />
+      <entry key="S30" value="23.73981563696421" />
+      <entry key="S60" value="27.03450486427634" />
+      <entry key="M2" value="28.924318561508798" />
+      <entry key="M5" value="30.146136545522953" />
+      <entry key="M10" value="30.569023564695883" />
+      <entry key="M15" value="30.711774978397795" />
+      <entry key="M30" value="30.85543162588925" />
+      <entry key="H1" value="30.92771737284163" />
+      <entry key="H2" value="31.2025513147738" />
+      <entry key="H4" value="44.46055939053916" />
+      <entry key="D1" value="570.0877969491102" />
+      <entry key="W1" value="1089.513605117269" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
-      <entry key="S2" value="2.104769638452763E-109" />
-      <entry key="S5" value="3.3828493430769983E-44" />
-      <entry key="S10" value="1.8428389228732318E-22" />
-      <entry key="S30" value="6.839022640710187E-8" />
-      <entry key="S60" value="4.0426301441708187E-4" />
-      <entry key="M2" value="0.03681500946656851" />
-      <entry key="M5" value="0.6889940406866203" />
-      <entry key="M10" value="3.0292921222647924" />
-      <entry key="M15" value="6.280823281517209" />
-      <entry key="M30" value="16.15339414318895" />
-      <entry key="H1" value="32.020357851646516" />
-      <entry key="H2" value="55.942365204413136" />
-      <entry key="H4" value="94.46220677985598" />
-      <entry key="D1" value="209.33997436347002" />
-      <entry key="W1" value="250.96175236539526" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="3.559673008983158E-188" />
+      <entry key="M5" value="2.7062601417151023E-75" />
+      <entry key="M10" value="1.898533187546791E-37" />
+      <entry key="M15" value="9.909869438233261E-25" />
+      <entry key="M30" value="6.416371029456029E-12" />
+      <entry key="H1" value="2.0180829852360843E-5" />
+      <entry key="H2" value="0.0444116842934168" />
+      <entry key="H4" value="2.6615602209310714" />
+      <entry key="D1" value="115.4778089190847" />
+      <entry key="W1" value="230.51536391179908" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.001169630671875324" />
-      <entry key="MS500" value="0.30569543947888456" />
-      <entry key="S2" value="1.17792660660689" />
-      <entry key="S5" value="1.6095013609951534" />
-      <entry key="S10" value="1.7925081425369884" />
-      <entry key="S30" value="1.927901633147327" />
-      <entry key="S60" value="1.965771756519627" />
-      <entry key="M2" value="2.162577198847814" />
-      <entry key="M5" value="5.305715700236169" />
-      <entry key="M10" value="17.788231875606577" />
-      <entry key="M15" value="36.9459107434013" />
-      <entry key="M30" value="99.97305428880453" />
-      <entry key="H1" value="201.10056116546593" />
-      <entry key="H2" value="343.3512178744656" />
-      <entry key="H4" value="560.1679050928307" />
-      <entry key="D1" value="1174.5002338462252" />
-      <entry key="W1" value="1391.3484137320354" />
+      <entry key="MS100" value="0.9855459844545232" />
+      <entry key="MS500" value="1.6787049900234945" />
+      <entry key="S2" value="4.2891857424747455" />
+      <entry key="S5" value="9.122013879309087" />
+      <entry key="S10" value="15.075256582584524" />
+      <entry key="S30" value="23.728317697369977" />
+      <entry key="S60" value="27.027557597003604" />
+      <entry key="M2" value="28.920497454326586" />
+      <entry key="M5" value="30.144517794924848" />
+      <entry key="M10" value="30.56819852602592" />
+      <entry key="M15" value="30.711221425186167" />
+      <entry key="M30" value="30.8551530737711" />
+      <entry key="H1" value="30.927597820789508" />
+      <entry key="H2" value="31.246880869639615" />
+      <entry key="H4" value="47.1217132436851" />
+      <entry key="D1" value="685.5628830986878" />
+      <entry key="W1" value="1320.0281925870113" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -222,7 +229,9 @@
     <MESSAGE value="Gets ALL images for a game and puts them in an interactive carousel. Also has a &quot;fetching game&quot; state to indicate that the program is busy. No game logic yet." />
     <MESSAGE value="Working on the actual game" />
     <MESSAGE value="Work" />
-    <option name="LAST_COMMIT_MESSAGE" value="Work" />
+    <MESSAGE value="There's a game now." />
+    <MESSAGE value="Runner: Added parallax scrolling BG objects, and a sky texture" />
+    <option name="LAST_COMMIT_MESSAGE" value="Runner: Added parallax scrolling BG objects, and a sky texture" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
