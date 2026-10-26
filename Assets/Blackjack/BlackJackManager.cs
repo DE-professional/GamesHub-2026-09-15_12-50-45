@@ -30,6 +30,7 @@ public class BlackJackManager : MonoBehaviour
     public Button doubleDownButton;
     public Button splitButton;
     public Button startNewGameButton;
+    public Button returnToMenuButton; // Shown once the session is over
 
     [Header("Betting")]
     public int startingChips = 500;   // Daily allowance
@@ -91,6 +92,7 @@ public class BlackJackManager : MonoBehaviour
 
         SetActionButtonsInteractable(false);
         startNewGameButton.gameObject.SetActive(false);
+        if (returnToMenuButton != null) returnToMenuButton.gameObject.SetActive(false);
         bettingPanel.SetActive(true);
         dealButton.gameObject.SetActive(true);
         UpdateBettingUI();
@@ -602,6 +604,7 @@ public class BlackJackManager : MonoBehaviour
             message += chips <= 0
                 ? "\nYou're out of chips. Today's score: 0"
                 : $"\nDay over! You cash out {chips} chips.";
+            if (returnToMenuButton != null) returnToMenuButton.gameObject.SetActive(true);
         }
         else
         {

@@ -11,12 +11,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c37f049f-f16a-49c3-b677-3fa581fbd580" name="Changes" comment="Runner: Added parallax scrolling BG objects, and a sky texture">
-      <change afterPath="$PROJECT_DIR$/Assets/Runner/Scripts/RunnerParallaxScatter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Runner/Scripts/RunnerParallaxScatter.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GamesHub-2026-09-15_12-50-45/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GamesHub-2026-09-15_12-50-45/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Blackjack/BlackJackManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blackjack/BlackJackManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Blackjack/Blackjack.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blackjack/Blackjack.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MainMenu/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainMenu/MainMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MainMenu/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainMenu/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Minesweeper/MinesweeperGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minesweeper/MinesweeperGame.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Minesweeper/minesweeper.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minesweeper/minesweeper.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PriceIsNice/MainMenu.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PriceIsNice/MainMenu.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PriceIsNice/PriceIsNice.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PriceIsNice/PriceIsNice.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Runner/Runner.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runner/Runner.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runner/Store Assets/Bolt 2D DinoRun VE1/Sprites/Back A.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runner/Store Assets/Bolt 2D DinoRun VE1/Sprites/Back A.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Runner/Store Assets/Bolt 2D DinoRun VE1/Sprites/Sky.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runner/Store Assets/Bolt 2D DinoRun VE1/Sprites/Sky.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runner/Scripts/RunnerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runner/Scripts/RunnerManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sudoku/Scenes/Sudoku.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sudoku/Scenes/Sudoku.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +45,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Blackjack" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,7 +53,15 @@
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="e3680443-cb02-4a27-8d07-c7abccc07cd6" />
   </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="main" />
+      </list>
+    </option>
+  </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Minesweeper/minesweeper.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Runner/Prefabs/Bird.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Runner/Scripts/RunnerManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -57,23 +72,23 @@
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0062549607866413" />
-      <entry key="MS500" value="1.6860534885878617" />
-      <entry key="S2" value="4.294810859562885" />
-      <entry key="S5" value="9.134190597786311" />
-      <entry key="S10" value="15.091798140179778" />
-      <entry key="S30" value="23.73981563696421" />
-      <entry key="S60" value="27.03450486427634" />
-      <entry key="M2" value="28.924318561508798" />
-      <entry key="M5" value="30.146136545522953" />
-      <entry key="M10" value="30.569023564695883" />
-      <entry key="M15" value="30.711774978397795" />
-      <entry key="M30" value="30.85543162588925" />
-      <entry key="H1" value="30.92771737284163" />
-      <entry key="H2" value="31.2025513147738" />
-      <entry key="H4" value="44.46055939053916" />
-      <entry key="D1" value="570.0877969491102" />
-      <entry key="W1" value="1089.513605117269" />
+      <entry key="MS100" value="1.6197983736849162" />
+      <entry key="MS500" value="3.620741021586799" />
+      <entry key="S2" value="6.27408013315995" />
+      <entry key="S5" value="7.232052386669108" />
+      <entry key="S10" value="7.601649327937364" />
+      <entry key="S30" value="7.863873760953191" />
+      <entry key="S60" value="7.931509436470861" />
+      <entry key="M2" value="7.965647122226871" />
+      <entry key="M5" value="7.986232931156419" />
+      <entry key="M10" value="7.993113532573734" />
+      <entry key="M15" value="7.995845617855807" />
+      <entry key="M30" value="8.150495229991709" />
+      <entry key="H1" value="11.04011278850315" />
+      <entry key="H2" value="21.893615564981342" />
+      <entry key="H4" value="43.58179091555761" />
+      <entry key="D1" value="533.6022499086218" />
+      <entry key="W1" value="1108.5938396345377" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -81,37 +96,37 @@
       <entry key="S2" value="0.0" />
       <entry key="S5" value="0.0" />
       <entry key="S10" value="0.0" />
-      <entry key="S30" value="0.0" />
-      <entry key="S60" value="0.0" />
-      <entry key="M2" value="3.559673008983158E-188" />
-      <entry key="M5" value="2.7062601417151023E-75" />
-      <entry key="M10" value="1.898533187546791E-37" />
-      <entry key="M15" value="9.909869438233261E-25" />
-      <entry key="M30" value="6.416371029456029E-12" />
-      <entry key="H1" value="2.0180829852360843E-5" />
-      <entry key="H2" value="0.0444116842934168" />
-      <entry key="H4" value="2.6615602209310714" />
-      <entry key="D1" value="115.4778089190847" />
-      <entry key="W1" value="230.51536391179908" />
+      <entry key="S30" value="6.0596938216320514E-148" />
+      <entry key="S60" value="3.481228638302369E-74" />
+      <entry key="M2" value="2.6386350306986594E-37" />
+      <entry key="M5" value="3.541353328951041E-15" />
+      <entry key="M10" value="8.415880296597881E-8" />
+      <entry key="M15" value="2.4195968717643056E-5" />
+      <entry key="M30" value="0.006956431233484939" />
+      <entry key="H1" value="0.11795352120947382" />
+      <entry key="H2" value="0.49411410815853474" />
+      <entry key="H4" value="2.144007695380471" />
+      <entry key="D1" value="102.30530388965043" />
+      <entry key="W1" value="227.96121311108482" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9855459844545232" />
-      <entry key="MS500" value="1.6787049900234945" />
-      <entry key="S2" value="4.2891857424747455" />
-      <entry key="S5" value="9.122013879309087" />
-      <entry key="S10" value="15.075256582584524" />
-      <entry key="S30" value="23.728317697369977" />
-      <entry key="S60" value="27.027557597003604" />
-      <entry key="M2" value="28.920497454326586" />
-      <entry key="M5" value="30.144517794924848" />
-      <entry key="M10" value="30.56819852602592" />
-      <entry key="M15" value="30.711221425186167" />
-      <entry key="M30" value="30.8551530737711" />
-      <entry key="H1" value="30.927597820789508" />
-      <entry key="H2" value="31.246880869639615" />
-      <entry key="H4" value="47.1217132436851" />
-      <entry key="D1" value="685.5628830986878" />
-      <entry key="W1" value="1320.0281925870113" />
+      <entry key="MS100" value="1.5936359886222988" />
+      <entry key="MS500" value="3.6086022159014357" />
+      <entry key="S2" value="6.268522303915725" />
+      <entry key="S5" value="7.229449490468965" />
+      <entry key="S10" value="7.6002738805293015" />
+      <entry key="S30" value="7.863397704079951" />
+      <entry key="S60" value="7.9312691368123325" />
+      <entry key="M2" value="7.965526398862266" />
+      <entry key="M5" value="7.986184503422333" />
+      <entry key="M10" value="7.99308937887173" />
+      <entry key="M15" value="7.995853483823523" />
+      <entry key="M30" value="8.157419351525824" />
+      <entry key="H1" value="11.157854855213454" />
+      <entry key="H2" value="22.387295323175458" />
+      <entry key="H4" value="45.72519784282498" />
+      <entry key="D1" value="635.9050562363733" />
+      <entry key="W1" value="1336.5542714146657" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -141,7 +156,7 @@
     "cidr.known.project.marker": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "SeerRunner",
+    "git-widget-placeholder": "bugfixes",
     "git.auto.fetch.suggestion.counter": "1",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",

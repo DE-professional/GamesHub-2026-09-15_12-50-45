@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -9,16 +10,10 @@ public class MainMenu : MonoBehaviour
     public string gameTitle = "GamesHub";
 
     [Header("Game slot button labels (what the player sees)")]
-    public string[] gameDisplayNames = new string[6]
-    {
-        "Game1", "Game2", "Game3", "Game4", "Game5", "Game6"
-    };
+    public List<string> gameDisplayNames = new List<string>();
 
     [Header("Game slot scenes (scene names must be added to Build Settings)")]
-    public string[] gameSceneNames = new string[6]
-    {
-        "Game1", "Game2", "Game3", "Game4", "Game5", "Game6"
-    };
+    public List<string> gameSceneNames = new List<string>();
 
     [Header("Look")]
     public Color backgroundColor = new Color(0.08f, 0.09f, 0.14f);
@@ -116,23 +111,36 @@ public class MainMenu : MonoBehaviour
         CreateText("Header", panel.transform, "Select a Game", 60, FontStyle.Bold,
             new Vector2(0.5f, 0.88f), new Vector2(900, 100));
 
+        // Size the grid to the number of games, shrinking cell height when the
+        // rows wouldn't otherwise fit between the header and the Back button
+        const int maxColumns = 3;
+        const float maxGridHeight = 420f;
+        Vector2 spacing = new Vector2(30, 40);
+        int count = gameSceneNames.Count;
+        int columns = Mathf.Clamp(count, 1, maxColumns);
+        int rows = Mathf.Max(1, Mathf.CeilToInt(count / (float)maxColumns));
+        float cellHeight = Mathf.Min(200f, (maxGridHeight - spacing.y * (rows - 1)) / rows);
+        Vector2 cellSize = new Vector2(280, cellHeight);
+
         GameObject grid = new GameObject("Slots", typeof(RectTransform), typeof(GridLayoutGroup));
         grid.transform.SetParent(panel.transform, false);
         RectTransform rt = grid.GetComponent<RectTransform>();
-        rt.anchorMin = rt.anchorMax = new Vector2(0.5f, 0.52f);
-        rt.sizeDelta = new Vector2(900, 440);
+        rt.anchorMin = rt.anchorMax = new Vector2(0.5f, 0.475f); // midway between header and Back button
+        rt.sizeDelta = new Vector2(columns * cellSize.x + (columns - 1) * spacing.x,
+                                   rows * cellSize.y + (rows - 1) * spacing.y);
 
         GridLayoutGroup g = grid.GetComponent<GridLayoutGroup>();
-        g.cellSize = new Vector2(280, 200);
-        g.spacing = new Vector2(30, 40);
+        g.cellSize = cellSize;
+        g.spacing = spacing;
         g.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
-        g.constraintCount = 3;
+        g.constraintCount = columns;
         g.childAlignment = TextAnchor.MiddleCenter;
 
-        for (int i = 0; i < 6; i++)
+        // One slot per scene; display names are optional
+        for (int i = 0; i < gameSceneNames.Count; i++)
         {
             int index = i; // capture for closure
-            string label = (gameDisplayNames != null && index < gameDisplayNames.Length
+            string label = (gameDisplayNames != null && index < gameDisplayNames.Count
                             && !string.IsNullOrEmpty(gameDisplayNames[index]))
                 ? gameDisplayNames[index]
                 : $"Game {index + 1}";
