@@ -19,7 +19,7 @@ public class GuessTracker : MonoBehaviour
     {
         if (guessText != null)
         {
-            guessText.text = $"Guesses Left: {remainingGuesses}";
+            guessText.text = $"<size=40%><color=#8B909C>GUESSES LEFT</color></size>\n{remainingGuesses}";
         }
     }
 }

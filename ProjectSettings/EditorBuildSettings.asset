@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/MainMenu/MainMenu.unity
+    guid: 0bad7655265ee47eba75d0b891c20cdd
+  - enabled: 1
     path: Assets/Blackjack/Blackjack.unity
     guid: be98d4be23623459988cf08ca4948834
   - enabled: 1
@@ -14,9 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/PriceIsNice/PriceIsNice.unity
     guid: 33d634997c1214d949f0dee79874376f
-  - enabled: 1
-    path: Assets/MainMenu/MainMenu.unity
-    guid: 0bad7655265ee47eba75d0b891c20cdd
   - enabled: 1
     path: Assets/Runner/Runner.unity
     guid: eab30ec57da274e43885f7983c74e311
