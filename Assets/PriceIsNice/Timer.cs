@@ -32,6 +32,6 @@ public class Timer : MonoBehaviour
         {
             _currTime += Time.deltaTime;
         }
-        text.text = "Time Taken: " + _currTime.ToString("F2");
+        text.text = "<size=40%><color=#8B909C>TIME</color></size>\n" + _currTime.ToString("F1") + "s";
     }
 }

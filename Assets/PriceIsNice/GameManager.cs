@@ -135,7 +135,7 @@ public class GameManager : MonoBehaviour
     private bool isGameOver;
     
     [SerializeField] private TextMeshProUGUI promptText;
-    private string defaultStr = "Do you think\n{0}\nis MORE or LESS expensive than ";
+    private string defaultStr = "Is it higher or lower than";
     private StoreDetailsData randomGame;
     
     private readonly HashSet<int> _blockedDescriptorIds = new() { 1, 3, 5 };
@@ -232,7 +232,7 @@ public class GameManager : MonoBehaviour
         var scoreInfo =  winWrapper.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
         var timeTaken = timer.StopTimer();
         
-        gameInfo.text = $"{randomGame.name}'s Price Was: {randomGame.price_overview.FinalFormatted}";
+        gameInfo.text = $"{randomGame.name} sells for\n<font=\"IBMPlexMono-SemiBold SDF\"><size=300%><color=#F2C14E>{randomGame.price_overview.FinalFormatted}</color></size></font>";
         try
         {
             _imageCarousel.gameObject.SetActive(false);
@@ -251,13 +251,13 @@ public class GameManager : MonoBehaviour
             var score = baseScore * (1+((float)triesRemaining/maxTries)) * (targetTime / (targetTime + timeTaken));
             //Display some text saying "You win! {Game name}'s actual price was {actual price}". 
             //Show your score (tries left * time taken)
-            scoreInfo.text = $"Your score is: {Math.Round(score,0)}";
-            
+            scoreInfo.text = $"SCORE  <color=#EDEEF0>{Math.Round(score,0)}</color>";
+
         }
         else
         {
             scoreInfo.SetText("");
-            congratsText.SetText("You Lost, but there's always tomorrow!");
+            congratsText.SetText("Not this time.");
             
         }
         winWrapper.gameObject.SetActive(true);
